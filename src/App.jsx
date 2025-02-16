@@ -11,7 +11,7 @@ import "./App.css";
 export default function App() {
     const [contacts, setContacts] = useState([]);
     const [education, setEducation] = useState([]);
-    const [aboutText, setAboutText] = useState([]);
+    const [aboutText, setAboutText] = useState("");
 
     if (education[education.length - 1] !== "" && !education.includes("")) {
         setEducation((prev) => {
