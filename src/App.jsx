@@ -25,7 +25,7 @@ export default function App() {
                 <h1>CV-Generator</h1>
             </header>
             <aside className="main-aside">
-                <ContactChanger contacts={contacts} setContacts={setContacts} />
+                <ContactChanger setContacts={setContacts} />
                 <AboutChanger setAboutText={setAboutText} />
                 <EducationChanger
                     education={education}
