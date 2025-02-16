@@ -8,29 +8,31 @@ export default function EducationChanger({ education, setEducation }) {
                 <ul>
                     {education.map((edu, index) => {
                         return (
-                            <input
-                                key={index}
-                                type="text"
-                                value={edu}
-                                onFocus={() => setFocus(index)}
-                                autoFocus={focus === index}
-                                onBlur={() =>
-                                    education.includes("") &&
-                                    education.length > 1 &&
-                                    setEducation((prev) =>
-                                        prev.filter(
-                                            (element) => element.trim() !== ""
+                            <li key={index}>
+                                <input
+                                    type="text"
+                                    value={edu}
+                                    onFocus={() => setFocus(index)}
+                                    autoFocus={focus === index}
+                                    onBlur={() =>
+                                        education.includes("") &&
+                                        education.length > 1 &&
+                                        setEducation((prev) =>
+                                            prev.filter(
+                                                (element) =>
+                                                    element.trim() !== ""
+                                            )
                                         )
-                                    )
-                                }
-                                onChange={(e) => {
-                                    setEducation((prev) => {
-                                        const changed = [...prev];
-                                        changed[index] = e.target.value;
-                                        return changed;
-                                    });
-                                }}
-                            ></input>
+                                    }
+                                    onChange={(e) => {
+                                        setEducation((prev) => {
+                                            const changed = [...prev];
+                                            changed[index] = e.target.value;
+                                            return changed;
+                                        });
+                                    }}
+                                ></input>
+                            </li>
                         );
                     })}
                 </ul>
