@@ -21,6 +21,11 @@
         border-bottom: none;
     }
 }
+li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
 .education {
     padding-left: 2rem;
     list-style-type: circle;
