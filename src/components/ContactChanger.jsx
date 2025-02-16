@@ -1,5 +1,5 @@
 import { useState } from "react";
-import inputs from "../assets/inputs";
+import { inputs } from "../assets/inputs";
 
 export default function ContactChanger({ contacts, setContacts }) {
     const [focus, setFocus] = useState(false);
