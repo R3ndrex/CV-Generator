@@ -8,7 +8,7 @@ export default function Contact({ contacts }) {
                 <ul>
                     {contacts.map((contact, index) => {
                         return (
-                            <li key={contact}>
+                            <li key={inputs[index].id}>
                                 {contact !== "" && contact !== undefined && (
                                     <img
                                         className="pictogram"
