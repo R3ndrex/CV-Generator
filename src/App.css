@@ -7,6 +7,20 @@
     grid-template-rows: min-content 2fr;
     grid-auto-rows: 2fr;
 }
+.h2-image {
+    width: 2rem;
+}
+.h2-section {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    align-items: end;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid black;
+    > h2 {
+        margin-bottom: 0;
+        border-bottom: none;
+    }
+}
 .education {
     padding: 2rem;
     list-style-type: circle;
