@@ -1,44 +1,56 @@
-import { useState } from "react";
 import { inputs } from "../assets/inputs";
 import Message from "../assets/message.svg";
-export default function ContactChanger({ contacts, setContacts }) {
-    const [focus, setFocus] = useState(false);
+
+// fix keys same for empty elements in contacts
+
+export default function ContactChanger({ setContacts }) {
     return (
         <section>
-            <div className="h2-section">
-                <img className="h2-image" src={Message} alt="message image" />
-                <h2>Contact</h2>
-            </div>
-
-            <ul>
-                {inputs.map((input, index) => {
-                    return (
-                        <li key={input.id}>
-                            <img
-                                src={input.image}
-                                alt={input.alt}
-                                className="pictogram"
-                            />
-                            <input
-                                placeholder={input.placeholder}
-                                type="text"
-                                maxLength={254}
-                                value={contacts[index]}
-                                autoFocus={input.id === focus}
-                                onFocus={() => setFocus(input.id)}
-                                onChange={(e) => {
-                                    setContacts((prev) => {
-                                        const changed = [...prev];
-                                        changed[index] = e.target.value;
-                                        console.log(changed);
-                                        return changed;
-                                    });
-                                }}
-                            />
-                        </li>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    const form = new FormData(e.currentTarget);
+                    let contacts = inputs.map((_, index) => form.get(index));
+                    const uniqueContacts = contacts.filter(
+                        (contact) => contact !== ""
                     );
-                })}
-            </ul>
+                    const changedSet = new Set(uniqueContacts);
+                    changedSet.size !== uniqueContacts.length
+                        ? alert("Ti 4e")
+                        : setContacts(contacts);
+                }}
+            >
+                <div className="h2-section">
+                    <img
+                        className="h2-image"
+                        src={Message}
+                        alt="message image"
+                    />
+                    <h2>Contact</h2>
+                </div>
+
+                <ul>
+                    {inputs.map((input) => {
+                        return (
+                            <li key={input.id}>
+                                <img
+                                    src={input.image}
+                                    alt={input.alt}
+                                    className="pictogram"
+                                />
+                                <input
+                                    name={input.id}
+                                    id={input.id}
+                                    placeholder={input.placeholder}
+                                    type="text"
+                                    maxLength={254}
+                                />
+                            </li>
+                        );
+                    })}
+                </ul>
+                <button type="submit">Submit</button>
+            </form>
         </section>
     );
 }
