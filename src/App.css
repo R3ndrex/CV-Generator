@@ -7,7 +7,10 @@
     grid-template-rows: min-content 2fr;
     grid-auto-rows: 2fr;
 }
-
+.education {
+    padding: 2rem;
+    list-style-type: circle;
+}
 header {
     grid-column: 1/-1;
     text-align: center;
