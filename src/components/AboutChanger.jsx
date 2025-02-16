@@ -1,7 +1,15 @@
+import Account from "../assets/account.svg";
 export default function AboutChanger({ setAboutText }) {
     return (
         <section>
-            <h2>About</h2>
+            <div className="h2-section">
+                <img
+                    className="h2-image"
+                    src={Account}
+                    alt="person image"
+                ></img>
+                <h2>About</h2>
+            </div>
             <textarea
                 name=""
                 id=""

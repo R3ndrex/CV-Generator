@@ -1,10 +1,18 @@
 import { useState } from "react";
+import EducationImage from "../assets/school.svg";
 export default function EducationChanger({ education, setEducation }) {
     const [focus, setFocus] = useState(null);
     return (
         <>
             <section>
-                <h2>Education </h2>
+                <div className="h2-section">
+                    <img
+                        className="h2-image"
+                        src={EducationImage}
+                        alt="graduation cap image"
+                    />
+                    <h2>Education </h2>
+                </div>
                 <ul>
                     {education.map((edu, index) => {
                         return (
