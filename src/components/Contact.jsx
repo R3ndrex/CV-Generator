@@ -1,4 +1,4 @@
-import inputs from "../assets/inputs";
+import { inputs } from "../assets/inputs";
 
 export default function Contact({ contacts }) {
     return (
