@@ -1,9 +1,10 @@
-import Contact from "./components/ContactSection.jsx";
+import Contact from "./components/Contact.jsx";
 import ContactChanger from "./components/ContactChanger.jsx";
 import { useState } from "react";
 import AboutChanger from "./components/AboutChanger.jsx";
 import About from "./components/About.jsx";
 import Education from "./components/Education.jsx";
+import EducationChanger from "./components/EducationChanger.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
 import "./App.css";
 
@@ -11,6 +12,12 @@ export default function App() {
     const [contacts, setContacts] = useState([]);
     const [education, setEducation] = useState([]);
     const [aboutText, setAboutText] = useState([]);
+
+    if (education[education.length - 1] !== "" && !education.includes("")) {
+        setEducation((prev) => {
+            return [...prev, ""];
+        });
+    }
 
     return (
         <>
@@ -20,6 +27,10 @@ export default function App() {
             <aside className="main-aside">
                 <ContactChanger contacts={contacts} setContacts={setContacts} />
                 <AboutChanger setAboutText={setAboutText} />
+                <EducationChanger
+                    education={education}
+                    setEducation={setEducation}
+                ></EducationChanger>
             </aside>
             <main>
                 <About>{aboutText}</About>
