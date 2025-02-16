@@ -1,23 +1,30 @@
-import PhoneImage from "../assets/phone.svg";
-import MailImage from "../assets/email.svg";
-import HomeImage from "../assets/home.svg";
-const inputs = [
+import Phone from "../assets/phone.svg";
+import Email from "../assets/email.svg";
+import Home from "../assets/home.svg";
+import LinkedIn from "../assets/linkedin.svg";
+
+export const inputs = [
     {
-        image: PhoneImage,
+        image: Phone,
         alt: "Phone image",
-        placeholder: "Enter your phone number",
+        placeholder: "Enter phone number",
         id: 0,
     },
     {
-        image: MailImage,
-        placeholder: "Enter your email address",
+        image: Email,
+        alt: "Email image",
+        placeholder: "Enter email address",
         id: 1,
     },
     {
-        image: HomeImage,
-        placeholder: "Enter your address",
+        image: Home,
+        placeholder: "Enter home address",
         id: 2,
     },
+    {
+        image: LinkedIn,
+        alt: "LinkedIn image",
+        placeholder: "Enter LinkedIn adress",
+        id: 3,
+    },
 ];
-
-export default inputs;
