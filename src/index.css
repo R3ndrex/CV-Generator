@@ -78,6 +78,9 @@ textarea,
 input {
     border-radius: 0.5rem;
 }
+h3 {
+    margin: 0;
+}
 
 @media (prefers-color-scheme: light) {
     :root {
