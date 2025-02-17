@@ -6,7 +6,7 @@ import About from "./components/About.jsx";
 import Education from "./components/Education.jsx";
 import EducationChanger from "./components/EducationChanger.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
-import ImageChanger from "./components/ImageChanger.jsx";
+import GeneralInfoChanger from "./components/GeneralInfoChanger.jsx";
 import UserImage from "./components/UserImage.jsx";
 import ChangerHeader from "./components/ChangerHeader.jsx";
 import "./App.css";
@@ -15,25 +15,28 @@ export default function App() {
     const [contacts, setContacts] = useState([]);
     const [education, setEducation] = useState([]);
     const [aboutText, setAboutText] = useState("");
-    const [image, setImage] = useState(null);
-
+    const [generalInfo, setGeneralInfo] = useState({
+        fullname: null,
+        photoSrc: null,
+        profession: null,
+    });
     if (education[education.length - 1] !== "" && !education.includes("")) {
         setEducation((prev) => {
             return [...prev, ""];
         });
     }
-
     return (
         <>
             <header>
                 <h1>CV-Generator</h1>
             </header>
             <aside className="main-aside">
-                <ImageChanger
+                <GeneralInfoChanger
                     ChangerHeader={ChangerHeader}
-                    setImage={setImage}
-                ></ImageChanger>
+                    setGeneralInfo={setGeneralInfo}
+                />
                 <ContactChanger
+                    contacts={contacts}
                     ChangerHeader={ChangerHeader}
                     setContacts={setContacts}
                 />
@@ -45,14 +48,17 @@ export default function App() {
                     ChangerHeader={ChangerHeader}
                     education={education}
                     setEducation={setEducation}
-                ></EducationChanger>
+                />
             </aside>
             <main>
-                <h2>Lytvynenko Rostyslav</h2>
+                <div>
+                    <h2 className="margin-bottom-0">{generalInfo.fullName}</h2>
+                    <h3>{generalInfo.profession}</h3>
+                </div>
                 <About>{aboutText}</About>
                 <Education>{education}</Education>
                 <aside className="cv-aside">
-                    <UserImage src={image} />
+                    <UserImage src={generalInfo.photoSrc} />
                     <Contact contacts={contacts} />
                     <WorkExperience />
                 </aside>
