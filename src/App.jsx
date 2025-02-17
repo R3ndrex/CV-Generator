@@ -6,12 +6,16 @@ import About from "./components/About.jsx";
 import Education from "./components/Education.jsx";
 import EducationChanger from "./components/EducationChanger.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
+import ImageChanger from "./components/ImageChanger.jsx";
+import UserImage from "./components/UserImage.jsx";
+import ChangerHeader from "./components/ChangerHeader.jsx";
 import "./App.css";
 
 export default function App() {
     const [contacts, setContacts] = useState([]);
     const [education, setEducation] = useState([]);
     const [aboutText, setAboutText] = useState("");
+    const [image, setImage] = useState(null);
 
     if (education[education.length - 1] !== "" && !education.includes("")) {
         setEducation((prev) => {
@@ -25,17 +29,30 @@ export default function App() {
                 <h1>CV-Generator</h1>
             </header>
             <aside className="main-aside">
-                <ContactChanger setContacts={setContacts} />
-                <AboutChanger setAboutText={setAboutText} />
+                <ImageChanger
+                    ChangerHeader={ChangerHeader}
+                    setImage={setImage}
+                ></ImageChanger>
+                <ContactChanger
+                    ChangerHeader={ChangerHeader}
+                    setContacts={setContacts}
+                />
+                <AboutChanger
+                    ChangerHeader={ChangerHeader}
+                    setAboutText={setAboutText}
+                />
                 <EducationChanger
+                    ChangerHeader={ChangerHeader}
                     education={education}
                     setEducation={setEducation}
                 ></EducationChanger>
             </aside>
             <main>
+                <h2>Lytvynenko Rostyslav</h2>
                 <About>{aboutText}</About>
                 <Education>{education}</Education>
                 <aside className="cv-aside">
+                    <UserImage src={image} />
                     <Contact contacts={contacts} />
                     <WorkExperience />
                 </aside>
