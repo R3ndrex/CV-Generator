@@ -10,9 +10,10 @@
 .h2-image {
     width: 2rem;
 }
+
 .h2-section {
     display: grid;
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: min-content 1fr min-content;
     align-items: end;
     margin-bottom: 1rem;
     border-bottom: 1px solid black;
@@ -20,6 +21,9 @@
         margin-bottom: 0;
         border-bottom: none;
     }
+}
+.h2-pictogram {
+    width: 2rem;
 }
 li {
     display: flex;
@@ -55,6 +59,8 @@ main {
     width: 1em;
 }
 .cv-aside {
+    display: flex;
+    flex-direction: column;
     position: relative;
     top: -30px;
     right: -30px;
@@ -64,4 +70,11 @@ main {
     color: white;
     border-color: white;
     background-color: #535bf2;
+}
+.user-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: center;
 }
