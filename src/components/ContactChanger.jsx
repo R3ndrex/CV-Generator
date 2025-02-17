@@ -2,8 +2,12 @@ import { inputs } from "../assets/inputs";
 import Message from "../assets/message.svg";
 
 // fix keys same for empty elements in contacts
-
-export default function ContactChanger({ ChangerHeader, setContacts }) {
+// input default values only store contacts, which means that changes in inputs, after closing section will not save
+export default function ContactChanger({
+    ChangerHeader,
+    contacts,
+    setContacts,
+}) {
     return (
         <section>
             <form
@@ -16,7 +20,7 @@ export default function ContactChanger({ ChangerHeader, setContacts }) {
                     );
                     const changedSet = new Set(uniqueContacts);
                     changedSet.size !== uniqueContacts.length
-                        ? alert("Ti 4e")
+                        ? alert("You cant have same input values")
                         : setContacts(contacts);
                 }}
             >
@@ -27,9 +31,8 @@ export default function ContactChanger({ ChangerHeader, setContacts }) {
                         alt="message image"
                     />
                     <h2>Contact</h2>
-
                     <ul>
-                        {inputs.map((input) => {
+                        {inputs.map((input, index) => {
                             return (
                                 <li key={input.id}>
                                     <img
@@ -40,9 +43,10 @@ export default function ContactChanger({ ChangerHeader, setContacts }) {
                                     <input
                                         name={input.id}
                                         id={input.id}
+                                        defaultValue={contacts[index] || ""}
                                         placeholder={input.placeholder}
                                         type="text"
-                                        maxLength={254}
+                                        maxLength={100}
                                     />
                                 </li>
                             );
