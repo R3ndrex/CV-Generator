@@ -3,7 +3,11 @@ export default function UserImage({ src }) {
     return (
         <img
             className="user-photo"
-            src={!src ? AccountCircle : src}
+            src={
+                src === null || src === undefined || src === ""
+                    ? AccountCircle
+                    : src
+            }
             alt="user photo"
         />
     );
