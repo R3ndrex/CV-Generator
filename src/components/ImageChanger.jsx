@@ -21,11 +21,10 @@ export default function ImageChanger({ ChangerHeader, setImage }) {
                 <ChangerHeader>
                     <img className="h2-image" src={iInCircle} alt="alpha-i" />
                     <h2>General information</h2>
+
+                    <input name="user-photo" type="file"></input>
+                    <button type="submit">Submit</button>
                 </ChangerHeader>
-
-                <input name="user-photo" type="file"></input>
-
-                <button type="submit">Submit</button>
             </form>
         </>
     );

@@ -27,29 +27,29 @@ export default function ContactChanger({ ChangerHeader, setContacts }) {
                         alt="message image"
                     />
                     <h2>Contact</h2>
-                </ChangerHeader>
 
-                <ul>
-                    {inputs.map((input) => {
-                        return (
-                            <li key={input.id}>
-                                <img
-                                    src={input.image}
-                                    alt={input.alt}
-                                    className="pictogram"
-                                />
-                                <input
-                                    name={input.id}
-                                    id={input.id}
-                                    placeholder={input.placeholder}
-                                    type="text"
-                                    maxLength={254}
-                                />
-                            </li>
-                        );
-                    })}
-                </ul>
-                <button type="submit">Submit</button>
+                    <ul>
+                        {inputs.map((input) => {
+                            return (
+                                <li key={input.id}>
+                                    <img
+                                        src={input.image}
+                                        alt={input.alt}
+                                        className="pictogram"
+                                    />
+                                    <input
+                                        name={input.id}
+                                        id={input.id}
+                                        placeholder={input.placeholder}
+                                        type="text"
+                                        maxLength={254}
+                                    />
+                                </li>
+                            );
+                        })}
+                    </ul>
+                    <button type="submit">Submit</button>
+                </ChangerHeader>
             </form>
         </section>
     );

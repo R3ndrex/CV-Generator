@@ -25,17 +25,17 @@ export default function EducationChanger({
                             alt="graduation cap image"
                         />
                         <h2>Education </h2>
+                        <ul>
+                            {education.map((_, index) => {
+                                return (
+                                    <li key={index}>
+                                        <input type="text" name={index}></input>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                        <button type="submit">Submit</button>
                     </ChangerHeader>
-                    <ul>
-                        {education.map((_, index) => {
-                            return (
-                                <li key={index}>
-                                    <input type="text" name={index}></input>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                    <button type="submit">Submit</button>
                 </form>
             </section>
         </>

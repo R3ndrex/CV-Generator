@@ -16,15 +16,16 @@ export default function AboutChanger({ ChangerHeader, setAboutText }) {
                         alt="person image"
                     ></img>
                     <h2>About</h2>
+
+                    <textarea
+                        name="aboutText"
+                        id="user-about-text"
+                        maxLength={400}
+                        rows={3}
+                        cols={30}
+                    ></textarea>
+                    <button type="submit">Submit</button>
                 </ChangerHeader>
-                <textarea
-                    name="aboutText"
-                    id="user-about-text"
-                    maxLength={400}
-                    rows={3}
-                    cols={30}
-                ></textarea>
-                <button type="submit">Submit</button>
             </form>
         </section>
     );
