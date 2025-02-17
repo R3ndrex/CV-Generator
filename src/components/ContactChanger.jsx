@@ -3,7 +3,7 @@ import Message from "../assets/message.svg";
 
 // fix keys same for empty elements in contacts
 
-export default function ContactChanger({ setContacts }) {
+export default function ContactChanger({ ChangerHeader, setContacts }) {
     return (
         <section>
             <form
@@ -20,14 +20,14 @@ export default function ContactChanger({ setContacts }) {
                         : setContacts(contacts);
                 }}
             >
-                <div className="h2-section">
+                <ChangerHeader>
                     <img
                         className="h2-image"
                         src={Message}
                         alt="message image"
                     />
                     <h2>Contact</h2>
-                </div>
+                </ChangerHeader>
 
                 <ul>
                     {inputs.map((input) => {

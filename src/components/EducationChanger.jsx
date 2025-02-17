@@ -1,6 +1,10 @@
 import EducationImage from "../assets/school.svg";
 
-export default function EducationChanger({ education, setEducation }) {
+export default function EducationChanger({
+    ChangerHeader,
+    education,
+    setEducation,
+}) {
     return (
         <>
             <section>
@@ -14,14 +18,14 @@ export default function EducationChanger({ education, setEducation }) {
                         setEducation([...educationArray]);
                     }}
                 >
-                    <div className="h2-section">
+                    <ChangerHeader>
                         <img
                             className="h2-image"
                             src={EducationImage}
                             alt="graduation cap image"
                         />
                         <h2>Education </h2>
-                    </div>
+                    </ChangerHeader>
                     <ul>
                         {education.map((_, index) => {
                             return (

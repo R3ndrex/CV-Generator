@@ -1,5 +1,5 @@
 import Account from "../assets/account.svg";
-export default function AboutChanger({ setAboutText }) {
+export default function AboutChanger({ ChangerHeader, setAboutText }) {
     return (
         <section>
             <form
@@ -9,14 +9,14 @@ export default function AboutChanger({ setAboutText }) {
                     setAboutText(form.get("aboutText"));
                 }}
             >
-                <div className="h2-section">
+                <ChangerHeader>
                     <img
                         className="h2-image"
                         src={Account}
                         alt="person image"
                     ></img>
                     <h2>About</h2>
-                </div>
+                </ChangerHeader>
                 <textarea
                     name="aboutText"
                     id="user-about-text"
