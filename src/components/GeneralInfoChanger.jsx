@@ -31,6 +31,14 @@ export default function GeneralInfoChanger({
             };
         });
     }
+    function handleChange(prop, value) {
+        setDefaultGeneralInfo((prev) => {
+            return {
+                ...prev,
+                [prop]: value,
+            };
+        });
+    }
 
     return (
         <>
@@ -47,12 +55,7 @@ export default function GeneralInfoChanger({
                         maxLength={100}
                         value={defaultGeneralInfo.fullName}
                         onChange={(e) =>
-                            setDefaultGeneralInfo((prev) => {
-                                return {
-                                    ...prev,
-                                    fullName: e.target.value,
-                                };
-                            })
+                            handleChange("fullName", e.target.value)
                         }
                     />
                     <input
@@ -63,12 +66,7 @@ export default function GeneralInfoChanger({
                         maxLength={50}
                         value={defaultGeneralInfo.profession}
                         onChange={(e) =>
-                            setDefaultGeneralInfo((prev) => {
-                                return {
-                                    ...prev,
-                                    profession: e.target.value,
-                                };
-                            })
+                            handleChange("profession", e.target.value)
                         }
                     />
                     <input
