@@ -7,7 +7,11 @@ export default function Education({ children }) {
                     return (
                         element !== "" &&
                         element !== undefined && (
-                            <li key={element}>{element}</li>
+                            <li key={element.id}>
+                                {element.text}
+                                {element.title}
+                                {element.date}
+                            </li>
                         )
                     );
                 })}
