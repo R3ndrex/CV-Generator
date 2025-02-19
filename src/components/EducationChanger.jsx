@@ -25,7 +25,6 @@ export default function EducationChanger({
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const educationArray = education.map((edu) => {
-            console.log(form.get(`school-${edu.id}`));
             return {
                 ...edu,
                 schoolName: form.get(`school-${edu.id}`),
