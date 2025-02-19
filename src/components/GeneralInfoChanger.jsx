@@ -37,13 +37,13 @@ export default function GeneralInfoChanger({ ChangerHeader, setGeneralInfo }) {
                         type="text"
                         name="username"
                         id="user-name"
-                        placeholder="Enter your full name"
+                        placeholder="Enter full name"
                     />
                     <input
                         type="text"
                         name="profession"
                         id="user-profession"
-                        placeholder="Enter your profession"
+                        placeholder="Enter profession"
                     />
                     <input
                         name="user-photo"
