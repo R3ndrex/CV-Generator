@@ -1,5 +1,12 @@
+import { useState } from "react";
 import iInCircle from "../assets/alpha-i-circle-outline.svg";
-export default function GeneralInfoChanger({ ChangerHeader, setGeneralInfo }) {
+export default function GeneralInfoChanger({
+    ChangerHeader,
+    generalInfo,
+    setGeneralInfo,
+}) {
+    const [defaultGeneralInfo, setDefaultGeneralInfo] = useState(generalInfo);
+
     function HandleImage(image) {
         if (image && image.name !== "") {
             const reader = new FileReader();
@@ -12,23 +19,22 @@ export default function GeneralInfoChanger({ ChangerHeader, setGeneralInfo }) {
             reader.readAsDataURL(image);
         }
     }
+    function handleSubmit(e) {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        HandleImage(formData.get("user-photo"));
+        setGeneralInfo((prev) => {
+            return {
+                ...prev,
+                fullName: formData.get("username"),
+                profession: formData.get("profession"),
+            };
+        });
+    }
 
     return (
         <>
-            <form
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    const form = new FormData(e.currentTarget);
-                    HandleImage(form.get("user-photo"));
-                    setGeneralInfo((prev) => {
-                        return {
-                            ...prev,
-                            fullName: form.get("username"),
-                            profession: form.get("profession"),
-                        };
-                    });
-                }}
-            >
+            <form onSubmit={handleSubmit}>
                 <ChangerHeader
                     image={{ src: iInCircle, alt: "alpha-i" }}
                     title="General information"
@@ -38,12 +44,30 @@ export default function GeneralInfoChanger({ ChangerHeader, setGeneralInfo }) {
                         name="username"
                         id="user-name"
                         placeholder="Enter full name"
+                        value={defaultGeneralInfo.fullName}
+                        onChange={(e) =>
+                            setDefaultGeneralInfo((prev) => {
+                                return {
+                                    ...prev,
+                                    fullName: e.target.value,
+                                };
+                            })
+                        }
                     />
                     <input
                         type="text"
                         name="profession"
                         id="user-profession"
                         placeholder="Enter profession"
+                        value={defaultGeneralInfo.profession}
+                        onChange={(e) =>
+                            setDefaultGeneralInfo((prev) => {
+                                return {
+                                    ...prev,
+                                    profession: e.target.value,
+                                };
+                            })
+                        }
                     />
                     <input
                         name="user-photo"
