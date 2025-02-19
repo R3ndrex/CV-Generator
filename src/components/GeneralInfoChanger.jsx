@@ -1,13 +1,14 @@
 import iInCircle from "../assets/alpha-i-circle-outline.svg";
 export default function GeneralInfoChanger({ ChangerHeader, setGeneralInfo }) {
     function HandleImage(image) {
-        if (image) {
+        if (image && image.name !== "") {
             const reader = new FileReader();
 
             reader.onload = (e) =>
                 setGeneralInfo((prev) => {
                     return { ...prev, photoSrc: e.target.result };
                 });
+
             reader.readAsDataURL(image);
         }
     }
@@ -28,10 +29,10 @@ export default function GeneralInfoChanger({ ChangerHeader, setGeneralInfo }) {
                     });
                 }}
             >
-                <ChangerHeader>
-                    <img className="h2-image" src={iInCircle} alt="alpha-i" />
-                    <h2>General information</h2>
-
+                <ChangerHeader
+                    image={{ src: iInCircle, alt: "alpha-i" }}
+                    title="General information"
+                >
                     <input
                         type="text"
                         name="username"
