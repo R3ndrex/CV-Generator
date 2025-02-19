@@ -3,7 +3,7 @@
     display: grid;
     align-items: start;
     gap: 1rem 10%;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 2fr 3fr 1fr;
     grid-template-rows: min-content 2fr;
     grid-auto-rows: 2fr;
 }
@@ -41,6 +41,9 @@ header {
 }
 .main-aside {
     grid-row: 2/-1;
+    > :last-child {
+        margin-bottom: 2rem;
+    }
 }
 .main-aside,
 main {
@@ -67,17 +70,6 @@ main {
     flex-direction: column;
     align-items: start;
 }
-.edu-li {
-    display: grid;
-    grid-template-columns: repeat(2, min-content);
-    grid-auto-columns: repeat(2, min-content);
-    margin-bottom: 1rem;
-    > button {
-        justify-self: end;
-        grid-column: 1/-1;
-    }
-}
-
 .cv-aside {
     display: flex;
     flex-direction: column;
