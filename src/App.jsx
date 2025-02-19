@@ -12,7 +12,12 @@ import ChangerHeader from "./components/ChangerHeader.jsx";
 import "./App.css";
 
 export default function App() {
-    const [contacts, setContacts] = useState(["1234567891"]);
+    const [contacts, setContacts] = useState([
+        "1234567891",
+        "random@mail.com",
+        "Default home address",
+        "https://linkedin.com/in/default",
+    ]);
     const [education, setEducation] = useState([
         {
             schoolName: "",
@@ -45,6 +50,7 @@ export default function App() {
                     setContacts={setContacts}
                 />
                 <AboutChanger
+                    aboutText={aboutText}
                     ChangerHeader={ChangerHeader}
                     setAboutText={setAboutText}
                 />
