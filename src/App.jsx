@@ -11,6 +11,7 @@ import UserImage from "./components/UserImage.jsx";
 import ChangerHeader from "./components/ChangerHeader.jsx";
 import "./App.css";
 import Header from "./components/Header.jsx";
+import WorkExperienceChanger from "./components/WorkExperienceChanger.jsx";
 
 export default function App() {
     const [showEdit, setShowEdit] = useState(false);
@@ -36,6 +37,16 @@ export default function App() {
         photoSrc: null,
         profession: "Software engineer",
     });
+    const [experience, setExperience] = useState([
+        {
+            companyName: "",
+            title: "",
+            respons: "",
+            id: crypto.randomUUID(),
+            dateStart: "",
+            dateEnd: "",
+        },
+    ]);
     return (
         <>
             <Header onEdit={() => setShowEdit((prev) => !prev)} />
@@ -64,6 +75,11 @@ export default function App() {
                     education={education}
                     setEducation={setEducation}
                 />
+                <WorkExperienceChanger
+                    ChangerHeader={ChangerHeader}
+                    experience={experience}
+                    setExperience={setExperience}
+                />
             </aside>
             <main className={`${(!showEdit && "centered-main") || ""}`}>
                 <div>
@@ -78,10 +94,10 @@ export default function App() {
                 </div>
                 <About>{aboutText}</About>
                 <Education>{education}</Education>
+                <WorkExperience>{experience}</WorkExperience>
                 <aside className="cv-aside">
                     <UserImage src={generalInfo.photoSrc} />
                     <Contact contacts={contacts} />
-                    <WorkExperience />
                 </aside>
             </main>
         </>
