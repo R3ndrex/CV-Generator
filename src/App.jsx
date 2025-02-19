@@ -10,8 +10,10 @@ import GeneralInfoChanger from "./components/GeneralInfoChanger.jsx";
 import UserImage from "./components/UserImage.jsx";
 import ChangerHeader from "./components/ChangerHeader.jsx";
 import "./App.css";
+import Header from "./components/Header.jsx";
 
 export default function App() {
+    const [showEdit, setShowEdit] = useState(false);
     const [contacts, setContacts] = useState([
         "1234567891",
         "random@mail.com",
@@ -36,11 +38,14 @@ export default function App() {
     });
     return (
         <>
-            <header>
-                <h1>CV-Generator</h1>
-            </header>
-            <aside className="main-aside">
+            <Header onEdit={() => setShowEdit((prev) => !prev)} />
+            <aside
+                className={`main-aside ${
+                    (!showEdit && "disabled") || "enabled"
+                }`}
+            >
                 <GeneralInfoChanger
+                    generalInfo={generalInfo}
                     ChangerHeader={ChangerHeader}
                     setGeneralInfo={setGeneralInfo}
                 />
@@ -60,7 +65,7 @@ export default function App() {
                     setEducation={setEducation}
                 />
             </aside>
-            <main>
+            <main className={`${(!showEdit && "centered-main") || ""}`}>
                 <div>
                     {generalInfo.fullName && (
                         <h2 className="margin-bottom-0">
