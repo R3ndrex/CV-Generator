@@ -12,19 +12,23 @@ import ChangerHeader from "./components/ChangerHeader.jsx";
 import "./App.css";
 
 export default function App() {
-    const [contacts, setContacts] = useState([]);
-    const [education, setEducation] = useState([]);
-    const [aboutText, setAboutText] = useState("");
+    const [contacts, setContacts] = useState(["1234567891"]);
+    const [education, setEducation] = useState([
+        {
+            schoolName: "",
+            title: "",
+            id: crypto.randomUUID(),
+            date: null,
+        },
+    ]);
+    const [aboutText, setAboutText] = useState(
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi tenetur voluptate voluptates ex sapiente, consectetur porro veniam minus repellendus praesentium? Consequuntur tenetur dolorem magni fugiat hic! Amet tempora assumenda error eligendi culpa laboriosam fuga nostrum voluptate aperiam sequi deleniti facilis, aliquam corporis rem quo libero molestias! Quae vero suscipit earum!"
+    );
     const [generalInfo, setGeneralInfo] = useState({
-        fullname: null,
+        fullName: "John Doe",
         photoSrc: null,
-        profession: null,
+        profession: "Software engineer",
     });
-    if (education[education.length - 1] !== "" && !education.includes("")) {
-        setEducation((prev) => {
-            return [...prev, ""];
-        });
-    }
     return (
         <>
             <header>
