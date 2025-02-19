@@ -1,5 +1,5 @@
 import EducationImage from "../assets/school.svg";
-import "../styles/EducationChanger.css";
+import "../styles/educationChanger.css";
 export default function EducationChanger({
     ChangerHeader,
     education,
