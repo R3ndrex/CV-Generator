@@ -24,10 +24,14 @@
 }
 .h2-pictogram {
     width: 2rem;
-    transition: 0.5s ease;
+    transition: transform 0.5s ease;
 }
+
 .rotated {
     transform: rotate(180deg);
+}
+.disabled {
+    display: none;
 }
 
 li {
@@ -61,6 +65,11 @@ main {
     > * {
         overflow-wrap: break-word;
     }
+}
+.centered-main {
+    margin-left: calc(100% / 3.25);
+    margin-right: calc(100% / 3.25);
+    grid-column: 1/-1;
 }
 .pictogram {
     width: 1em;
