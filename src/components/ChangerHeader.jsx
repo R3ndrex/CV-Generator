@@ -1,6 +1,6 @@
 import Chevron from "../assets/chevron-down.svg";
 import { useState } from "react";
-export default function ChangerHeader({ children }) {
+export default function ChangerHeader({ image, title, children }) {
     const [active, setActive] = useState(false);
     return (
         <>
@@ -8,15 +8,15 @@ export default function ChangerHeader({ children }) {
                 className="h2-section"
                 onClick={() => setActive((prev) => !prev)}
             >
-                {children[0]}
-                {children[1]}
+                <img className="h2-image" src={image.src} alt={image.alt} />
+                <h2>{title}</h2>
                 <img
                     src={Chevron}
                     className={`h2-pictogram ${active && "rotated"}`}
                     alt="chevron-down"
                 />
             </div>
-            {active && children.slice(2)}
+            {active && <div className="changer-content">{children}</div>}
         </>
     );
 }

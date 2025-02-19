@@ -9,15 +9,12 @@ export default function AboutChanger({ ChangerHeader, setAboutText }) {
                     setAboutText(form.get("aboutText"));
                 }}
             >
-                <ChangerHeader>
-                    <img
-                        className="h2-image"
-                        src={Account}
-                        alt="person image"
-                    ></img>
-                    <h2>About</h2>
-
+                <ChangerHeader
+                    image={{ src: Account, alt: "person-image" }}
+                    title="About"
+                >
                     <textarea
+                        placeholder="Write about yourself"
                         name="aboutText"
                         id="user-about-text"
                         maxLength={400}
