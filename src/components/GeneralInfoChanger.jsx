@@ -44,6 +44,7 @@ export default function GeneralInfoChanger({
                         name="username"
                         id="user-name"
                         placeholder="Enter full name"
+                        maxLength={100}
                         value={defaultGeneralInfo.fullName}
                         onChange={(e) =>
                             setDefaultGeneralInfo((prev) => {
@@ -59,6 +60,7 @@ export default function GeneralInfoChanger({
                         name="profession"
                         id="user-profession"
                         placeholder="Enter profession"
+                        maxLength={50}
                         value={defaultGeneralInfo.profession}
                         onChange={(e) =>
                             setDefaultGeneralInfo((prev) => {

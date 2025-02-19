@@ -60,12 +60,14 @@ export default function EducationChanger({
                                             name={`school-${edu.id}`}
                                             placeholder="Enter school name"
                                             defaultValue={edu.schoolName}
+                                            maxLength={100}
                                         ></input>
                                         <input
                                             type="text"
                                             name={`title-${edu.id}`}
                                             placeholder="Enter title of study"
                                             defaultValue={edu.title}
+                                            maxLength={50}
                                         ></input>
 
                                         <label htmlFor={`date-start-${edu.id}`}>

@@ -53,17 +53,20 @@ export default function WorkExperienceChanger({
                                         id={`company-${work.id}`}
                                         name={`company-${work.id}`}
                                         placeholder="Enter company name"
+                                        maxLength={50}
                                     />
                                     <input
                                         type="text"
                                         id={`title-${work.id}`}
                                         name={`title-${work.id}`}
                                         placeholder="Enter position title"
+                                        maxLength={50}
                                     />
                                     <textarea
                                         name={`respons-${work.id}`}
                                         id={`respons-${work.id}`}
                                         placeholder="Enter main responsibilities"
+                                        maxLength={500}
                                     ></textarea>
                                     <input
                                         type="date"

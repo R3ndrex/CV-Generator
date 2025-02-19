@@ -23,7 +23,7 @@ export default function AboutChanger({
                         placeholder="Write about yourself"
                         name="aboutText"
                         id="user-about-text"
-                        maxLength={400}
+                        maxLength={500}
                         rows={3}
                         cols={30}
                         value={defaultAboutText}
