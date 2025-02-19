@@ -62,8 +62,14 @@ export default function App() {
             </aside>
             <main>
                 <div>
-                    <h2 className="margin-bottom-0">{generalInfo.fullName}</h2>
-                    <h3>{generalInfo.profession}</h3>
+                    {generalInfo.fullName && (
+                        <h2 className="margin-bottom-0">
+                            {generalInfo.fullName}
+                        </h2>
+                    )}
+                    {generalInfo.profession && (
+                        <h3>{generalInfo.profession}</h3>
+                    )}
                 </div>
                 <About>{aboutText}</About>
                 <Education>{education}</Education>
