@@ -52,11 +52,7 @@ main {
 .pictogram {
     width: 1em;
 }
-.changer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-}
+
 .cv-aside {
     display: flex;
     flex-direction: column;
