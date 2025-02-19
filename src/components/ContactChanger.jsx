@@ -1,38 +1,43 @@
+import { useState } from "react";
 import { inputs } from "../assets/inputs";
 import Message from "../assets/message.svg";
 
-// fix keys same for empty elements in contacts
 // input default values only store contacts, which means that changes in inputs, after closing section will not save
 export default function ContactChanger({
     ChangerHeader,
     contacts,
     setContacts,
 }) {
+    const [defaultValues, setDefaultValues] = useState(() =>
+        inputs.map((_, index) => contacts[index] || "")
+    );
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        let contacts = inputs.map((input) => form.get(input.id));
+        const uniqueContacts = contacts.filter((contact) => contact !== "");
+        const changedSet = new Set(uniqueContacts);
+        changedSet.size !== uniqueContacts.length
+            ? alert("You cant have same input values")
+            : setContacts(contacts);
+    }
+
+    function handleChange(id, value) {
+        setDefaultValues((prev) =>
+            prev.map((inp, index) => (index === id ? value : inp))
+        );
+    }
+
     return (
         <section>
-            <form
-                onSubmit={(e) => {
-                    e.preventDefault();
-                    const form = new FormData(e.currentTarget);
-                    let contacts = inputs.map((_, index) => form.get(index));
-                    const uniqueContacts = contacts.filter(
-                        (contact) => contact !== ""
-                    );
-                    const changedSet = new Set(uniqueContacts);
-                    changedSet.size !== uniqueContacts.length
-                        ? alert("You cant have same input values")
-                        : setContacts(contacts);
-                }}
-            >
-                <ChangerHeader>
-                    <img
-                        className="h2-image"
-                        src={Message}
-                        alt="message image"
-                    />
-                    <h2>Contact</h2>
+            <form onSubmit={handleSubmit}>
+                <ChangerHeader
+                    image={{ src: Message, alt: "message-image" }}
+                    title="Contact"
+                >
                     <ul>
-                        {inputs.map((input, index) => {
+                        {inputs.map((input) => {
                             return (
                                 <li key={input.id}>
                                     <img
@@ -43,7 +48,13 @@ export default function ContactChanger({
                                     <input
                                         name={input.id}
                                         id={input.id}
-                                        defaultValue={contacts[index] || ""}
+                                        value={defaultValues[input.id]}
+                                        onChange={(e) =>
+                                            handleChange(
+                                                input.id,
+                                                e.target.value
+                                            )
+                                        }
                                         placeholder={input.placeholder}
                                         type="text"
                                         maxLength={100}
