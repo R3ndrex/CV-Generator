@@ -1,3 +1,4 @@
+import "../styles/education.css";
 export default function Education({ children }) {
     return (
         <section>
@@ -7,10 +8,16 @@ export default function Education({ children }) {
                     return (
                         element !== "" &&
                         element !== undefined && (
-                            <li key={element.id}>
-                                {element.text}
-                                {element.title}
-                                {element.date}
+                            <li className="educationLi" key={element.id}>
+                                <div>{element.schoolName}</div>
+                                <div>
+                                    {element.dateStart}
+                                    {element.dateStart &&
+                                        element.dateEnd &&
+                                        "-"}
+                                    {element.dateEnd}
+                                </div>
+                                <div>{element.title}</div>
                             </li>
                         )
                     );
