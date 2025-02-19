@@ -1,5 +1,11 @@
+import { useState } from "react";
 import Account from "../assets/account.svg";
-export default function AboutChanger({ ChangerHeader, setAboutText }) {
+export default function AboutChanger({
+    aboutText,
+    ChangerHeader,
+    setAboutText,
+}) {
+    const [defaultAboutText, setDefaultAboutText] = useState(aboutText);
     return (
         <section>
             <form
@@ -20,6 +26,8 @@ export default function AboutChanger({ ChangerHeader, setAboutText }) {
                         maxLength={400}
                         rows={3}
                         cols={30}
+                        value={defaultAboutText}
+                        onChange={(e) => setDefaultAboutText(e.target.value)}
                     ></textarea>
                     <button type="submit">Submit</button>
                 </ChangerHeader>
