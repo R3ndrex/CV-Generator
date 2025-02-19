@@ -8,9 +8,6 @@
     grid-auto-rows: 2fr;
 }
 
-.rotated {
-    transform: rotate(180deg);
-}
 .disabled {
     display: none;
 }
