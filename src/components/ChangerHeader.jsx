@@ -1,5 +1,7 @@
 import Chevron from "../assets/chevron-down.svg";
 import { useState } from "react";
+import "../styles/changerHeader.css";
+
 export default function ChangerHeader({ image, title, children }) {
     const [active, setActive] = useState(false);
     return (

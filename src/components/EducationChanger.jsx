@@ -1,3 +1,4 @@
+import { useState } from "react";
 import EducationImage from "../assets/school.svg";
 import "../styles/educationChanger.css";
 export default function EducationChanger({
@@ -5,6 +6,7 @@ export default function EducationChanger({
     education,
     setEducation,
 }) {
+    const [defaultEducation, setDefaultEducation] = useState([...education]); //todo
     function AddEmptyElement() {
         setEducation((prev) => {
             return [
@@ -58,11 +60,13 @@ export default function EducationChanger({
                                             type="text"
                                             name={`school-${edu.id}`}
                                             placeholder="Enter school name"
+                                            defaultValue={edu.schoolName}
                                         ></input>
                                         <input
                                             type="text"
                                             name={`title-${edu.id}`}
                                             placeholder="Enter title of study"
+                                            defaultValue={edu.title}
                                         ></input>
 
                                         <label htmlFor={`date-start-${edu.id}`}>
@@ -73,6 +77,7 @@ export default function EducationChanger({
                                             type="date"
                                             name={`date-start-${edu.id}`}
                                             id={`date-start-${edu.id}`}
+                                            defaultValue={edu.dateStart}
                                         />
                                         <label htmlFor={`date-end-${edu.id}`}>
                                             Ending date
@@ -83,6 +88,7 @@ export default function EducationChanger({
                                             type="date"
                                             name={`date-end-${edu.id}`}
                                             id={`date-end-${edu.id}`}
+                                            defaultValue={edu.dateEnd}
                                         />
 
                                         <button
