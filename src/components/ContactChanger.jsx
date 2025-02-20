@@ -14,16 +14,17 @@ export default function ContactChanger({ Accordion, contacts, setContacts }) {
         let contacts = inputs.map((input) => form.get(input.id));
         const uniqueContacts = contacts.filter((contact) => contact !== "");
         const changedSet = new Set(uniqueContacts);
-        changedSet.size !== uniqueContacts.length
-            ? alert("You cant have same input values")
-            : setContacts(contacts);
+        if (changedSet.size !== uniqueContacts.length) {
+            return alert("You cant have same input values");
+        }
+        setContacts(contacts);
+        setDefaultValues(contacts);
     }
 
-    function handleChange(id, value) {
+    const handleChange = (id, value) =>
         setDefaultValues((prev) =>
             prev.map((inp, index) => (index === id ? value : inp))
         );
-    }
 
     return (
         <section>
