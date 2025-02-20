@@ -1,9 +1,9 @@
 import { inputs } from "../assets/inputs";
 
 export default function Contact({ contacts }) {
-    function CheckEmpty(array) {
-        return array.filter((element) => element !== "") <= 0;
-    }
+    const CheckEmpty = (array) =>
+        array.filter((element) => element !== "") <= 0;
+
     return (
         <>
             {!CheckEmpty(contacts) && (
