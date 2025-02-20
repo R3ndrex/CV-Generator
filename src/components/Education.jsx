@@ -18,8 +18,8 @@ export default function Education({ children }) {
                                         {element.dateStart &&
                                         element.dateEnd ? (
                                             <div>
-                                                {element.dateEnd} -{" "}
-                                                {element.dateStart}
+                                                {element.dateStart} -{" "}
+                                                {element.dateEnd}
                                             </div>
                                         ) : (
                                             <div></div>
