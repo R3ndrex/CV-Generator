@@ -8,7 +8,7 @@ import EducationChanger from "./components/EducationChanger.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
 import GeneralInfoChanger from "./components/GeneralInfoChanger.jsx";
 import UserImage from "./components/UserImage.jsx";
-import ChangerHeader from "./components/ChangerHeader.jsx";
+import Accordion from "./components/Accordion.jsx";
 import "./App.css";
 import Header from "./components/Header.jsx";
 import WorkExperienceChanger from "./components/WorkExperienceChanger.jsx";
@@ -57,26 +57,26 @@ export default function App() {
             >
                 <GeneralInfoChanger
                     generalInfo={generalInfo}
-                    ChangerHeader={ChangerHeader}
+                    Accordion={Accordion}
                     setGeneralInfo={setGeneralInfo}
                 />
                 <ContactChanger
                     contacts={contacts}
-                    ChangerHeader={ChangerHeader}
+                    Accordion={Accordion}
                     setContacts={setContacts}
                 />
                 <AboutChanger
                     aboutText={aboutText}
-                    ChangerHeader={ChangerHeader}
+                    Accordion={Accordion}
                     setAboutText={setAboutText}
                 />
                 <EducationChanger
-                    ChangerHeader={ChangerHeader}
+                    Accordion={Accordion}
                     education={education}
                     setEducation={setEducation}
                 />
                 <WorkExperienceChanger
-                    ChangerHeader={ChangerHeader}
+                    Accordion={Accordion}
                     experience={experience}
                     setExperience={setExperience}
                 />
