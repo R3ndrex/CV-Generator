@@ -49,7 +49,10 @@ export default function App() {
     ]);
     return (
         <>
-            <Header onEdit={() => setShowEdit((prev) => !prev)} />
+            <Header
+                showEdit={showEdit}
+                onEdit={() => setShowEdit((prev) => !prev)}
+            />
             <aside
                 className={`main-aside ${
                     (!showEdit && "disabled") || "enabled"
