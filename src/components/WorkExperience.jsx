@@ -6,11 +6,13 @@ export default function WorkExperience({ children }) {
                 {children.map((work) => (
                     <li className="work-item" key={work.id}>
                         <div>{work.companyName}</div>
-                        {work.dateStart && work.dateEnd && (
-                            <div className="date-container">
-                                ({work.dateStart})-({work.dateEnd})
-                            </div>
-                        )}
+                        <div className="date-container">
+                            {work.dateStart && work.dateEnd && (
+                                <>
+                                    ({work.dateStart})-({work.dateEnd})
+                                </>
+                            )}
+                        </div>
                         <div>{work.title}</div>
                         <p>{work.respons}</p>
                     </li>
