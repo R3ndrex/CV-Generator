@@ -3,11 +3,7 @@ import { inputs } from "../assets/inputs";
 import Message from "../assets/message.svg";
 
 // input default values only store contacts, which means that changes in inputs, after closing section will not save
-export default function ContactChanger({
-    ChangerHeader,
-    contacts,
-    setContacts,
-}) {
+export default function ContactChanger({ Accordion, contacts, setContacts }) {
     const [defaultValues, setDefaultValues] = useState(() =>
         inputs.map((_, index) => contacts[index] || "")
     );
@@ -32,7 +28,7 @@ export default function ContactChanger({
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <ChangerHeader
+                <Accordion
                     image={{ src: Message, alt: "message-image" }}
                     title="Contact"
                 >
@@ -64,7 +60,7 @@ export default function ContactChanger({
                         })}
                     </ul>
                     <button type="submit">Submit</button>
-                </ChangerHeader>
+                </Accordion>
             </form>
         </section>
     );

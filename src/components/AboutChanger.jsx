@@ -1,10 +1,6 @@
 import { useState } from "react";
 import Account from "../assets/account.svg";
-export default function AboutChanger({
-    aboutText,
-    ChangerHeader,
-    setAboutText,
-}) {
+export default function AboutChanger({ aboutText, Accordion, setAboutText }) {
     const [defaultAboutText, setDefaultAboutText] = useState(aboutText);
     return (
         <section>
@@ -15,7 +11,7 @@ export default function AboutChanger({
                     setAboutText(form.get("aboutText"));
                 }}
             >
-                <ChangerHeader
+                <Accordion
                     image={{ src: Account, alt: "person-image" }}
                     title="About"
                 >
@@ -30,7 +26,7 @@ export default function AboutChanger({
                         onChange={(e) => setDefaultAboutText(e.target.value)}
                     ></textarea>
                     <button type="submit">Submit</button>
-                </ChangerHeader>
+                </Accordion>
             </form>
         </section>
     );
