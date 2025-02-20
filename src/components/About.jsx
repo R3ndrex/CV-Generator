@@ -1,8 +1,12 @@
 export default function About({ children }) {
     return (
-        <section>
-            <h2>About</h2>
-            <p>{children}</p>
-        </section>
+        <>
+            {children && children.trim() !== "" && (
+                <section>
+                    <h2>About</h2>
+                    <p>{children}</p>
+                </section>
+            )}
+        </>
     );
 }
