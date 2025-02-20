@@ -1,7 +1,7 @@
 import { useState } from "react";
 import iInCircle from "../assets/alpha-i-circle-outline.svg";
 export default function GeneralInfoChanger({
-    ChangerHeader,
+    Accordion,
     generalInfo,
     setGeneralInfo,
 }) {
@@ -43,7 +43,7 @@ export default function GeneralInfoChanger({
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <ChangerHeader
+                <Accordion
                     image={{ src: iInCircle, alt: "alpha-i" }}
                     title="General information"
                 >
@@ -76,7 +76,7 @@ export default function GeneralInfoChanger({
                     ></input>
 
                     <button type="submit">Submit</button>
-                </ChangerHeader>
+                </Accordion>
             </form>
         </section>
     );

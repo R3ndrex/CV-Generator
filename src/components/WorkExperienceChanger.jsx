@@ -1,7 +1,7 @@
 import Briefcase from "../assets/briefcase.svg";
 import "../styles/workExperienceChanger.css";
 export default function WorkExperienceChanger({
-    ChangerHeader,
+    Accordion,
     experience,
     setExperience,
 }) {
@@ -40,7 +40,7 @@ export default function WorkExperienceChanger({
     return (
         <section>
             <form onSubmit={handleSubmit}>
-                <ChangerHeader
+                <Accordion
                     title="Work experience"
                     image={{ src: Briefcase, alt: "briefcase-image" }}
                 >
@@ -98,7 +98,7 @@ export default function WorkExperienceChanger({
                             Add
                         </button>
                     </div>
-                </ChangerHeader>
+                </Accordion>
             </form>
         </section>
     );
