@@ -40,12 +40,13 @@ export default function App() {
     });
     const [experience, setExperience] = useState([
         {
-            companyName: "",
-            title: "",
-            respons: "",
+            companyName: "Google",
+            title: "Frontend Developer",
+            respons:
+                "Developed and maintained user-facing features using React and JavaScript.",
             id: crypto.randomUUID(),
-            dateStart: "",
-            dateEnd: "",
+            dateStart: "2022-06-01",
+            dateEnd: "2023-12-31",
         },
     ]);
     return (
