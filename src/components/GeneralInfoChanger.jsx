@@ -41,7 +41,7 @@ export default function GeneralInfoChanger({
     }
 
     return (
-        <>
+        <section>
             <form onSubmit={handleSubmit}>
                 <ChangerHeader
                     image={{ src: iInCircle, alt: "alpha-i" }}
@@ -78,6 +78,6 @@ export default function GeneralInfoChanger({
                     <button type="submit">Submit</button>
                 </ChangerHeader>
             </form>
-        </>
+        </section>
     );
 }
