@@ -31,7 +31,7 @@ export default function App() {
         },
     ]);
     const [aboutText, setAboutText] = useState(
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi tenetur voluptate voluptates ex sapiente, consectetur porro veniam minus repellendus praesentium? Consequuntur tenetur dolorem magni fugiat hic! Amet tempora assumenda error eligendi culpa laboriosam fuga nostrum voluptate aperiam sequi deleniti facilis, aliquam corporis rem quo libero molestias! Quae vero suscipit earum!"
+        "A passionate software engineer with experience in developing scalable web applications using modern technologies like React, JavaScript, and Node.js. Skilled in creating responsive user interfaces and working with cross-functional teams to deliver high-quality products. Always eager to learn new technologies and take on challenging projects."
     );
     const [generalInfo, setGeneralInfo] = useState({
         fullName: "John Doe",
