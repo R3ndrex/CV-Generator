@@ -93,10 +93,10 @@ export default function WorkExperienceChanger({
                         })}
                     </ul>
                     <div>
-                        <button type="submit">Submit</button>
                         <button type="button" onClick={addExperience}>
                             Add
                         </button>
+                        <button type="submit">Submit</button>
                     </div>
                 </Accordion>
             </form>
