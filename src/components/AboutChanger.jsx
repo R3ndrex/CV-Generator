@@ -9,6 +9,7 @@ export default function AboutChanger({ aboutText, Accordion, setAboutText }) {
                     e.preventDefault();
                     const form = new FormData(e.currentTarget);
                     setAboutText(form.get("aboutText"));
+                    setDefaultAboutText(form.get("aboutText"));
                 }}
             >
                 <Accordion
