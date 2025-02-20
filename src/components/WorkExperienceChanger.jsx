@@ -44,7 +44,7 @@ export default function WorkExperienceChanger({
                     title="Work experience"
                     image={{ src: Briefcase, alt: "briefcase-image" }}
                 >
-                    <ul className="work-list">
+                    <ul className="work-list-changers">
                         {experience.map((work) => {
                             return (
                                 <li className="work-list-item" key={work.id}>
