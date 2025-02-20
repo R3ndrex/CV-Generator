@@ -15,13 +15,15 @@ export default function Education({ children }) {
                                         key={element.id}
                                     >
                                         <div>{element.schoolName}</div>
-                                        <div>
-                                            {element.dateStart}
-                                            {element.dateStart &&
-                                                element.dateEnd &&
-                                                "-"}
-                                            {element.dateEnd}
-                                        </div>
+                                        {element.dateStart &&
+                                        element.dateEnd ? (
+                                            <div>
+                                                {element.dateEnd} -{" "}
+                                                {element.dateStart}
+                                            </div>
+                                        ) : (
+                                            <div></div>
+                                        )}
                                         <div>{element.title}</div>
                                     </li>
                                 )
