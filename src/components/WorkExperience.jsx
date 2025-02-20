@@ -1,10 +1,11 @@
+import "../styles/workExperience.css";
 export default function WorkExperience({ children }) {
     return (
         <>
             {children.length !== 0 && (
                 <section>
                     <h2>Work experience</h2>
-                    <ul>
+                    <ul className="work-list">
                         {children.map((work) => (
                             <li className="work-item" key={work.id}>
                                 <div>{work.companyName}</div>
