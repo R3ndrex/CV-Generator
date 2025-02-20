@@ -23,10 +23,11 @@ export default function App() {
     ]);
     const [education, setEducation] = useState([
         {
-            schoolName: "",
-            title: "",
+            schoolName: "University of Oxford",
+            title: "Software Engineer",
             id: crypto.randomUUID(),
-            date: null,
+            dateStart: "2020-09-01",
+            dateEnd: "2024-06-30",
         },
     ]);
     const [aboutText, setAboutText] = useState(
