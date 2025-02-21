@@ -3,7 +3,7 @@ export default function WorkExperience({ children }) {
     return (
         <>
             {children.length !== 0 && (
-                <section>
+                <section className="work-experience">
                     <h2>Work experience</h2>
                     <ul className="work-list">
                         {children.map((work) => (
@@ -12,7 +12,7 @@ export default function WorkExperience({ children }) {
                                 <div className="date-container">
                                     {work.dateStart && work.dateEnd && (
                                         <>
-                                            ({work.dateStart})-({work.dateEnd})
+                                            {work.dateStart} - {work.dateEnd}
                                         </>
                                     )}
                                 </div>
