@@ -1,6 +1,14 @@
+import { useEffect, useState } from "react";
+
+import {
+    contactsExample,
+    aboutExample,
+    generalInfoExample,
+    experienceExample,
+    educationExample,
+} from "./assets/examples.js";
 import Contact from "./components/Contact.jsx";
 import ContactChanger from "./components/ContactChanger.jsx";
-import { useState } from "react";
 import AboutChanger from "./components/AboutChanger.jsx";
 import About from "./components/About.jsx";
 import Education from "./components/Education.jsx";
@@ -9,46 +17,33 @@ import WorkExperience from "./components/WorkExperience.jsx";
 import GeneralInfoChanger from "./components/GeneralInfoChanger.jsx";
 import UserImage from "./components/UserImage.jsx";
 import Accordion from "./components/Accordion.jsx";
-import "./App.css";
 import Header from "./components/Header.jsx";
 import WorkExperienceChanger from "./components/WorkExperienceChanger.jsx";
 
+import "./App.css";
+
 export default function App() {
     const [showEdit, setShowEdit] = useState(false);
-    const [contacts, setContacts] = useState([
-        "1234567891",
-        "random@mail.com",
-        "Default home address",
-        "https://linkedin.com/in/default",
-    ]);
-    const [education, setEducation] = useState([
-        {
-            schoolName: "University of Oxford",
-            title: "Software Engineer",
-            id: crypto.randomUUID(),
-            dateStart: "2020-09-01",
-            dateEnd: "2024-06-30",
-        },
-    ]);
-    const [aboutText, setAboutText] = useState(
-        "A passionate software engineer with experience in developing scalable web applications using modern technologies like React, JavaScript, and Node.js. Skilled in creating responsive user interfaces and working with cross-functional teams to deliver high-quality products. Always eager to learn new technologies and take on challenging projects."
-    );
     const [generalInfo, setGeneralInfo] = useState({
-        fullName: "John Doe",
+        fullName: "",
         photoSrc: null,
-        profession: "Software engineer",
+        profession: "",
     });
-    const [experience, setExperience] = useState([
-        {
-            companyName: "Google",
-            title: "Frontend Developer",
-            respons:
-                "Developed and maintained user-facing features using React and JavaScript.",
-            id: crypto.randomUUID(),
-            dateStart: "2022-06-01",
-            dateEnd: "2023-12-31",
-        },
-    ]);
+    const [contacts, setContacts] = useState([]);
+    const [education, setEducation] = useState([]);
+    const [aboutText, setAboutText] = useState("");
+
+    const [experience, setExperience] = useState([]);
+    useEffect(() => LoadExample(), []);
+
+    function LoadExample() {
+        setContacts([...contactsExample]);
+        setEducation([{ ...educationExample }]);
+        setAboutText(aboutExample);
+        setGeneralInfo({ ...generalInfoExample });
+        setExperience([{ ...experienceExample }]);
+    }
+
     return (
         <>
             <Header
@@ -105,6 +100,11 @@ export default function App() {
                     <Contact contacts={contacts} />
                 </aside>
             </main>
+            <div>
+                <button className="example-button" onClick={LoadExample}>
+                    Load Example
+                </button>
+            </div>
         </>
     );
 }
