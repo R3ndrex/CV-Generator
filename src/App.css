@@ -43,6 +43,9 @@ main {
     > * {
         word-break: break-all;
     }
+    > .work-experience {
+        grid-column: 1/-1;
+    }
 }
 .centered-main {
     grid-column: 1/-1;
@@ -73,9 +76,6 @@ main {
 }
 
 @media (width <= 1250px) {
-    :root {
-        font-size: 0.8rem;
-    }
     #root {
         justify-content: center;
         justify-items: center;
@@ -83,10 +83,21 @@ main {
         grid-template-columns: minmax(100px, 1fr);
     }
     main {
-        width: min(90%, 400px);
+        width: min(90%, 700px);
     }
 
     .main-aside {
-        width: min(90%, 400px);
+        width: min(90%, 500px);
     }
+}
+@media (width<=800px) {
+    :root {
+        font-size: 0.8rem;
+    }
+    input {
+        width: 10rem;
+    }
+}
+.example-button {
+    background-color: #858bff;
 }
