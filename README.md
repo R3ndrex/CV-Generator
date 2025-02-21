@@ -1,4 +1,4 @@
-# React + Vite
+# CV-Generator
 
 CV-Generator is a web application for creating and customizing your resume. It allows users to choose from pre-made templates that can be customized to suit their personal preferences.
 
