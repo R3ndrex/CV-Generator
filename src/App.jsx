@@ -19,7 +19,6 @@ import UserImage from "./components/UserImage.jsx";
 import Accordion from "./components/Accordion.jsx";
 import Header from "./components/Header.jsx";
 import WorkExperienceChanger from "./components/WorkExperienceChanger.jsx";
-
 import "./App.css";
 
 export default function App() {
@@ -32,7 +31,6 @@ export default function App() {
     const [contacts, setContacts] = useState([]);
     const [education, setEducation] = useState([]);
     const [aboutText, setAboutText] = useState("");
-
     const [experience, setExperience] = useState([]);
     useEffect(() => LoadExample(), []);
 
@@ -100,10 +98,8 @@ export default function App() {
                     <Contact contacts={contacts} />
                 </aside>
             </main>
-            <div>
-                <button className="example-button" onClick={LoadExample}>
-                    Load Example
-                </button>
+            <div className="example-button">
+                <button onClick={LoadExample}>Load Example</button>
             </div>
         </>
     );
