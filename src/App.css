@@ -66,11 +66,11 @@ main {
     padding: 1rem;
     color: white;
     border-color: white;
-    background-color: #535bf2;
+    background-color: var(--changing-color);
 }
 .user-photo {
-    max-width: 150px;
-    max-height: 150px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     align-self: center;
@@ -80,7 +80,7 @@ main {
     #root {
         grid-template-rows: min-content min-content min-content;
     }
-    .example-button {
+    .control-panel {
         grid-column: 1/-1;
     }
 }
@@ -104,14 +104,28 @@ main {
     :root {
         font-size: 0.8rem;
     }
+    .user-photo {
+        width: 100px;
+        height: 100px;
+    }
     input {
         width: 10rem;
     }
 }
-.example-button {
+.control-panel {
+    padding: 1rem;
+    border: 1px solid black;
     justify-self: center;
     margin-bottom: 1rem;
     & button {
         background-color: #858bff;
     }
+    .color-container {
+        display: flex;
+        align-items: center;
+        & input[type="color"] {
+            height: 3rem;
+        }
+    }
+    filter: brightness(95%);
 }
