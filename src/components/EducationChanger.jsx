@@ -68,97 +68,92 @@ export default function EducationChanger({
                     title="Education"
                 >
                     <ul>
-                        {education.map((edu) => {
-                            return (
-                                <li className="edu-li" key={edu.id}>
-                                    <input
-                                        type="text"
-                                        name={`school-${edu.id}`}
-                                        placeholder="Enter school name"
-                                        maxLength={100}
-                                        value={findEduAndReturnValue(
+                        {education.map((edu) => (
+                            <li className="edu-li" key={edu.id}>
+                                <input
+                                    type="text"
+                                    name={`school-${edu.id}`}
+                                    placeholder="Enter school name"
+                                    maxLength={100}
+                                    value={findEduAndReturnValue(
+                                        edu,
+                                        "schoolName"
+                                    )}
+                                    onChange={(e) =>
+                                        findEduAndChangeValue(
                                             edu,
-                                            "schoolName"
-                                        )}
-                                        onChange={(e) =>
-                                            findEduAndChangeValue(
-                                                edu,
-                                                "schoolName",
-                                                e.target.value
-                                            )
-                                        }
-                                    ></input>
-                                    <input
-                                        type="text"
-                                        name={`title-${edu.id}`}
-                                        placeholder="Enter title of study"
-                                        maxLength={50}
-                                        value={findEduAndReturnValue(
+                                            "schoolName",
+                                            e.target.value
+                                        )
+                                    }
+                                ></input>
+                                <input
+                                    type="text"
+                                    name={`title-${edu.id}`}
+                                    placeholder="Enter title of study"
+                                    maxLength={50}
+                                    value={findEduAndReturnValue(edu, "title")}
+                                    onChange={(e) =>
+                                        findEduAndChangeValue(
                                             edu,
-                                            "title"
-                                        )}
-                                        onChange={(e) =>
-                                            findEduAndChangeValue(
-                                                edu,
-                                                "title",
-                                                e.target.value
-                                            )
-                                        }
-                                    ></input>
+                                            "title",
+                                            e.target.value
+                                        )
+                                    }
+                                ></input>
 
-                                    <label htmlFor={`date-start-${edu.id}`}>
-                                        Starting date
-                                    </label>
-                                    <input
-                                        placeholder="Enter starting date"
-                                        type="date"
-                                        name={`date-start-${edu.id}`}
-                                        id={`date-start-${edu.id}`}
-                                        value={findEduAndReturnValue(
+                                <label htmlFor={`date-start-${edu.id}`}>
+                                    Starting date
+                                </label>
+                                <input
+                                    placeholder="Enter starting date"
+                                    type="date"
+                                    name={`date-start-${edu.id}`}
+                                    id={`date-start-${edu.id}`}
+                                    value={findEduAndReturnValue(
+                                        edu,
+                                        "dateStart"
+                                    )}
+                                    onChange={(e) =>
+                                        findEduAndChangeValue(
                                             edu,
-                                            "dateStart"
-                                        )}
-                                        onChange={(e) =>
-                                            findEduAndChangeValue(
-                                                edu,
-                                                "dateStart",
-                                                e.target.value
-                                            )
-                                        }
-                                    />
-                                    <label htmlFor={`date-end-${edu.id}`}>
-                                        Ending date
-                                    </label>
+                                            "dateStart",
+                                            e.target.value
+                                        )
+                                    }
+                                />
+                                <label htmlFor={`date-end-${edu.id}`}>
+                                    Ending date
+                                </label>
 
-                                    <input
-                                        placeholder="Enter ending date"
-                                        type="date"
-                                        name={`date-end-${edu.id}`}
-                                        id={`date-end-${edu.id}`}
-                                        value={findEduAndReturnValue(
+                                <input
+                                    placeholder="Enter ending date"
+                                    type="date"
+                                    name={`date-end-${edu.id}`}
+                                    id={`date-end-${edu.id}`}
+                                    value={findEduAndReturnValue(
+                                        edu,
+                                        "dateEnd"
+                                    )}
+                                    onChange={(e) =>
+                                        findEduAndChangeValue(
                                             edu,
-                                            "dateEnd"
-                                        )}
-                                        onChange={(e) =>
-                                            findEduAndChangeValue(
-                                                edu,
-                                                "dateEnd",
-                                                e.target.value
-                                            )
-                                        }
-                                    />
+                                            "dateEnd",
+                                            e.target.value
+                                        )
+                                    }
+                                />
 
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            removePositionedElement(edu.id)
-                                        }
-                                    >
-                                        Remove
-                                    </button>
-                                </li>
-                            );
-                        })}
+                                <button
+                                    type="button"
+                                    onClick={() =>
+                                        removePositionedElement(edu.id)
+                                    }
+                                >
+                                    Remove
+                                </button>
+                            </li>
+                        ))}
                     </ul>
                     <div>
                         <button type="button" onClick={AddEmptyElement}>

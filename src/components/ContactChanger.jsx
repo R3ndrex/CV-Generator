@@ -34,31 +34,26 @@ export default function ContactChanger({ Accordion, contacts, setContacts }) {
                     title="Contact"
                 >
                     <ul>
-                        {inputs.map((input) => {
-                            return (
-                                <li key={input.id}>
-                                    <img
-                                        src={input.image}
-                                        alt={input.alt}
-                                        className="pictogram"
-                                    />
-                                    <input
-                                        name={input.id}
-                                        id={input.id}
-                                        value={defaultValues[input.id]}
-                                        onChange={(e) =>
-                                            handleChange(
-                                                input.id,
-                                                e.target.value
-                                            )
-                                        }
-                                        placeholder={input.placeholder}
-                                        type="text"
-                                        maxLength={100}
-                                    />
-                                </li>
-                            );
-                        })}
+                        {inputs.map((input) => (
+                            <li key={input.id}>
+                                <img
+                                    src={input.image}
+                                    alt={input.alt}
+                                    className="pictogram"
+                                />
+                                <input
+                                    name={input.id}
+                                    id={input.id}
+                                    value={defaultValues[input.id]}
+                                    onChange={(e) =>
+                                        handleChange(input.id, e.target.value)
+                                    }
+                                    placeholder={input.placeholder}
+                                    type="text"
+                                    maxLength={100}
+                                />
+                            </li>
+                        ))}
                     </ul>
                     <button type="submit">Submit</button>
                 </Accordion>

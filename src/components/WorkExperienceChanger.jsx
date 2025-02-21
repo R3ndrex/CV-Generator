@@ -45,52 +45,48 @@ export default function WorkExperienceChanger({
                     image={{ src: Briefcase, alt: "briefcase-image" }}
                 >
                     <ul className="work-list-changers">
-                        {experience.map((work) => {
-                            return (
-                                <li className="work-list-item" key={work.id}>
-                                    <input
-                                        type="text"
-                                        id={`company-${work.id}`}
-                                        name={`company-${work.id}`}
-                                        placeholder="Enter company name"
-                                        maxLength={50}
-                                    />
-                                    <input
-                                        type="text"
-                                        id={`title-${work.id}`}
-                                        name={`title-${work.id}`}
-                                        placeholder="Enter position title"
-                                        maxLength={50}
-                                    />
-                                    <textarea
-                                        name={`respons-${work.id}`}
-                                        id={`respons-${work.id}`}
-                                        placeholder="Enter main responsibilities"
-                                        maxLength={500}
-                                    ></textarea>
-                                    <input
-                                        type="date"
-                                        name={`dateStart-${work.id}`}
-                                        id={`dateStart-${work.id}`}
-                                        placeholder="Enter start date"
-                                    />
-                                    <input
-                                        type="date"
-                                        name={`dateEnd-${work.id}`}
-                                        id={`dateEnd-${work.id}`}
-                                        placeholder="Enter end date"
-                                    />
-                                    <button
-                                        type="button"
-                                        onClick={() =>
-                                            removeExperience(work.id)
-                                        }
-                                    >
-                                        Remove
-                                    </button>
-                                </li>
-                            );
-                        })}
+                        {experience.map((work) => (
+                            <li className="work-list-item" key={work.id}>
+                                <input
+                                    type="text"
+                                    id={`company-${work.id}`}
+                                    name={`company-${work.id}`}
+                                    placeholder="Enter company name"
+                                    maxLength={50}
+                                />
+                                <input
+                                    type="text"
+                                    id={`title-${work.id}`}
+                                    name={`title-${work.id}`}
+                                    placeholder="Enter position title"
+                                    maxLength={50}
+                                />
+                                <textarea
+                                    name={`respons-${work.id}`}
+                                    id={`respons-${work.id}`}
+                                    placeholder="Enter main responsibilities"
+                                    maxLength={500}
+                                ></textarea>
+                                <input
+                                    type="date"
+                                    name={`dateStart-${work.id}`}
+                                    id={`dateStart-${work.id}`}
+                                    placeholder="Enter start date"
+                                />
+                                <input
+                                    type="date"
+                                    name={`dateEnd-${work.id}`}
+                                    id={`dateEnd-${work.id}`}
+                                    placeholder="Enter end date"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => removeExperience(work.id)}
+                                >
+                                    Remove
+                                </button>
+                            </li>
+                        ))}
                     </ul>
                     <div>
                         <button type="button" onClick={addExperience}>
