@@ -19,30 +19,15 @@ import UserImage from "./components/UserImage.jsx";
 import Accordion from "./components/Accordion.jsx";
 import Header from "./components/Header.jsx";
 import WorkExperienceChanger from "./components/WorkExperienceChanger.jsx";
-import ControlPanel from "./components/ControlPanel.jsx";
 import "./App.css";
 
 export default function App() {
     const [showEdit, setShowEdit] = useState(false);
-    const [generalInfo, setGeneralInfo] = useState({
-        fullName: "",
-        photoSrc: null,
-        profession: "",
-    });
-    const [contacts, setContacts] = useState([]);
-    const [education, setEducation] = useState([]);
-    const [aboutText, setAboutText] = useState("");
-    const [experience, setExperience] = useState([]);
-    useEffect(() => LoadExample(), []);
-
-    function LoadExample() {
-        setContacts([...contactsExample]);
-        setEducation([{ ...educationExample }]);
-        setAboutText(aboutExample);
-        setGeneralInfo({ ...generalInfoExample });
-        setExperience([{ ...experienceExample }]);
-    }
-
+    const [generalInfo, setGeneralInfo] = useState({ ...generalInfoExample });
+    const [contacts, setContacts] = useState([...contactsExample]);
+    const [education, setEducation] = useState([{ ...educationExample }]);
+    const [aboutText, setAboutText] = useState(aboutExample);
+    const [experience, setExperience] = useState([{ ...experienceExample }]);
     return (
         <>
             <Header
@@ -99,10 +84,6 @@ export default function App() {
                     <Contact contacts={contacts} />
                 </aside>
             </main>
-            <ControlPanel
-                className={`${(!showEdit && "disabled") || "enabled"}`}
-                LoadExample={LoadExample}
-            />
         </>
     );
 }

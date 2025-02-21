@@ -76,15 +76,6 @@ main {
     align-self: center;
 }
 
-@media (width<=1600px) {
-    #root {
-        grid-template-rows: min-content min-content min-content;
-    }
-    .control-panel {
-        grid-column: 1/-1;
-    }
-}
-
 @media (width <= 1250px) {
     #root {
         justify-content: center;
@@ -111,21 +102,4 @@ main {
     input {
         width: 10rem;
     }
-}
-.control-panel {
-    padding: 1rem;
-    border: 1px solid black;
-    justify-self: center;
-    margin-bottom: 1rem;
-    & button {
-        background-color: #858bff;
-    }
-    .color-container {
-        display: flex;
-        align-items: center;
-        & input[type="color"] {
-            height: 3rem;
-        }
-    }
-    filter: brightness(95%);
 }
