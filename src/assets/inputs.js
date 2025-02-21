@@ -18,6 +18,7 @@ export const inputs = [
     },
     {
         image: Home,
+        alt: "House image",
         placeholder: "Enter home address",
         id: 2,
     },
