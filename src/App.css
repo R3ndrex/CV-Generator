@@ -36,10 +36,11 @@ main {
 }
 main {
     width: 700px;
+    min-height: 300px;
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: repeat(4, min-content);
-    gap: 1rem;
+    gap: 1rem 0;
     > * {
         word-break: break-all;
     }
@@ -75,6 +76,15 @@ main {
     align-self: center;
 }
 
+@media (width<=1600px) {
+    #root {
+        grid-template-rows: min-content min-content min-content;
+    }
+    .example-button {
+        grid-column: 1/-1;
+    }
+}
+
 @media (width <= 1250px) {
     #root {
         justify-content: center;
@@ -99,5 +109,9 @@ main {
     }
 }
 .example-button {
-    background-color: #858bff;
+    justify-self: center;
+    margin-bottom: 1rem;
+    & button {
+        background-color: #858bff;
+    }
 }
