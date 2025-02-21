@@ -8,12 +8,14 @@ export const inputs = [
         image: Phone,
         alt: "Phone image",
         placeholder: "Enter phone number",
+        pattern: "^(\\s*|[0-9]{9,})$",
         id: 0,
     },
     {
         image: Email,
         alt: "Email image",
         placeholder: "Enter email address",
+        pattern: "(\\s*|([^@\\s]+@[^@\\s]+\\.[^@\\s]+))",
         id: 1,
     },
     {

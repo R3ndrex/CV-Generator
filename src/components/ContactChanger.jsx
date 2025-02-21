@@ -49,7 +49,8 @@ export default function ContactChanger({ Accordion, contacts, setContacts }) {
                                         handleChange(input.id, e.target.value)
                                     }
                                     placeholder={input.placeholder}
-                                    type="text"
+                                    type={input.type}
+                                    pattern={input.pattern}
                                     maxLength={100}
                                 />
                             </li>
