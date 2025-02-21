@@ -47,6 +47,9 @@ main {
     > .work-experience {
         grid-column: 1/-1;
     }
+    button:last-child {
+        justify-self: start;
+    }
 }
 .centered-main {
     grid-column: 1/-1;
@@ -67,6 +70,7 @@ main {
     color: white;
     border-color: white;
     background-color: var(--changing-color);
+    border: 1px solid var(--changing-color);
 }
 .user-photo {
     width: 150px;
@@ -101,5 +105,20 @@ main {
     }
     input {
         width: 10rem;
+    }
+}
+@media print {
+    #root > :not(main) {
+        display: none;
+    }
+    main {
+        margin-top: 1rem;
+    }
+    button {
+        display: none;
+    }
+    .cv-aside {
+        background-color: black;
+        color: black;
     }
 }
