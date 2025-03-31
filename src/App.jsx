@@ -1,7 +1,7 @@
 import UserDataProvider from "./UserDataProvider.jsx";
 import Header from "./components/Header.jsx";
 import CvChanger from "./components/CVChanger/CvChanger.jsx";
-import CV from "./components/CV.jsx";
+import CV from "./components/CV/CV.jsx";
 import "./App.css";
 
 export default function App() {

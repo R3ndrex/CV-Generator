@@ -4,7 +4,7 @@ import WorkExperience from "./WorkExperience.jsx";
 import CvAside from "./CvAside.jsx";
 import UserIdentity from "./UserIdentity.jsx";
 import { useContext } from "react";
-import { UserContext } from "../UserContext.js";
+import { UserContext } from "../../UserContext.js";
 
 export default function CV() {
     const {

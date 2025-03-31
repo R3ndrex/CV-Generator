@@ -1,4 +1,4 @@
-import "../styles/workExperience.css";
+import "../../styles/workExperience.css";
 export default function WorkExperience({ children }) {
     return (
         <>

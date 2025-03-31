@@ -1,4 +1,5 @@
-import AccountCircle from "../assets/account-circle.svg";
+import AccountCircle from "../../assets/account-circle.svg";
+
 export default function UserImage({ src }) {
     return (
         <img
