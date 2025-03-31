@@ -121,4 +121,7 @@ main {
         background-color: black;
         color: black;
     }
+    .centered-main {
+        border: none;
+    }
 }
