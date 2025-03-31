@@ -4,6 +4,7 @@ import EducationChanger from "./EducationChanger.jsx";
 import GeneralInfoChanger from "./GeneralInfoChanger.jsx";
 import Accordion from "./Accordion.jsx";
 import WorkExperienceChanger from "./WorkExperienceChanger.jsx";
+import SkillsChanger from "./SkillsChanger.jsx";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext.js";
 
@@ -18,6 +19,7 @@ export default function CvChanger() {
             <AboutChanger Accordion={Accordion} />
             <EducationChanger Accordion={Accordion} />
             <WorkExperienceChanger Accordion={Accordion} />
+            <SkillsChanger Accordion={Accordion} />
         </aside>
     );
 }

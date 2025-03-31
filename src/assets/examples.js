@@ -27,3 +27,17 @@ export const educationExample = {
     dateStart: "2020-09-01",
     dateEnd: "2024-06-30",
 };
+export const skillsExample = [
+    {
+        text: "Good knowledge of HTML",
+        id: crypto.randomUUID(),
+    },
+    {
+        text: "Good knowledge of CSS",
+        id: crypto.randomUUID(),
+    },
+    {
+        text: "Good knowledge of JavaScript",
+        id: crypto.randomUUID(),
+    },
+];

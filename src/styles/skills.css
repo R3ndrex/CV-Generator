@@ -1,0 +1,7 @@
+.skill {
+    padding-left: 1rem;
+    text-transform: capitalize;
+}
+.skill-list {
+    gap: 0.5rem;
+}
