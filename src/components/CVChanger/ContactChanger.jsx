@@ -1,9 +1,12 @@
-import { useState } from "react";
-import { inputs } from "../assets/inputs";
-import Message from "../assets/message.svg";
+import { useContext, useState } from "react";
+import { inputs } from "../../assets/inputs";
+import Message from "../../assets/message.svg";
+import { UserContext } from "../../UserContext";
 
 // input default values only store contacts, which means that changes in inputs, after closing section will not save
-export default function ContactChanger({ Accordion, contacts, setContacts }) {
+export default function ContactChanger({ Accordion }) {
+    const { contacts, setContacts } = useContext(UserContext);
+
     const [defaultValues, setDefaultValues] = useState(() =>
         inputs.map((_, index) => contacts[index] || "")
     );

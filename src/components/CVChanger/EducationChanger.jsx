@@ -1,12 +1,10 @@
-import { useState } from "react";
-import EducationImage from "../assets/school.svg";
-import "../styles/educationChanger.css";
+import { useContext, useState } from "react";
+import EducationImage from "../../assets/school.svg";
+import { UserContext } from "../../UserContext";
+import "../../styles/educationChanger.css";
 
-export default function EducationChanger({
-    Accordion,
-    education,
-    setEducation,
-}) {
+export default function EducationChanger({ Accordion }) {
+    const { education, setEducation } = useContext(UserContext);
     const [defaultEducation, setDefaultEducation] = useState([...education]);
 
     function AddEmptyElement() {

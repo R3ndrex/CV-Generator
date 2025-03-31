@@ -1,10 +1,10 @@
-import { useState } from "react";
-import iInCircle from "../assets/alpha-i-circle-outline.svg";
-export default function GeneralInfoChanger({
-    Accordion,
-    generalInfo,
-    setGeneralInfo,
-}) {
+import { useContext, useState } from "react";
+import { UserContext } from "../../UserContext";
+import iInCircle from "../../assets/alpha-i-circle-outline.svg";
+
+export default function GeneralInfoChanger({ Accordion }) {
+    const { generalInfo, setGeneralInfo } = useContext(UserContext);
+
     const [defaultGeneralInfo, setDefaultGeneralInfo] = useState(generalInfo);
 
     function HandleImage(image) {

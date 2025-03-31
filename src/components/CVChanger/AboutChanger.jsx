@@ -1,6 +1,9 @@
-import { useState } from "react";
-import Account from "../assets/account.svg";
-export default function AboutChanger({ aboutText, Accordion, setAboutText }) {
+import { useContext, useState } from "react";
+import Account from "../../assets/account.svg";
+import { UserContext } from "../../UserContext";
+
+export default function AboutChanger({ Accordion }) {
+    const { aboutText, setAboutText } = useContext(UserContext);
     const [defaultAboutText, setDefaultAboutText] = useState(aboutText);
     function handleSubmit(e) {
         e.preventDefault();

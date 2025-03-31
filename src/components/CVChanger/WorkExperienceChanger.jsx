@@ -1,10 +1,10 @@
-import Briefcase from "../assets/briefcase.svg";
-import "../styles/workExperienceChanger.css";
-export default function WorkExperienceChanger({
-    Accordion,
-    experience,
-    setExperience,
-}) {
+import { useContext } from "react";
+import Briefcase from "../../assets/briefcase.svg";
+import "../../styles/workExperienceChanger.css";
+import { UserContext } from "../../UserContext";
+
+export default function WorkExperienceChanger({ Accordion }) {
+    const { experience, setExperience } = useContext(UserContext);
     function handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
