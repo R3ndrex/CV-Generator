@@ -12,9 +12,10 @@ export default function GeneralInfoChanger({
             const reader = new FileReader();
 
             reader.onload = (e) =>
-                setGeneralInfo((prev) => {
-                    return { ...prev, photoSrc: e.target.result };
-                });
+                setGeneralInfo((prev) => ({
+                    ...prev,
+                    photoSrc: e.target.result,
+                }));
 
             reader.readAsDataURL(image);
         }
@@ -23,21 +24,18 @@ export default function GeneralInfoChanger({
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         HandleImage(formData.get("user-photo"));
-        setGeneralInfo((prev) => {
-            return {
-                ...prev,
-                fullName: formData.get("username"),
-                profession: formData.get("profession"),
-            };
-        });
+        setGeneralInfo((prev) => ({
+            ...prev,
+            fullName: formData.get("username"),
+            profession: formData.get("profession"),
+        }));
     }
+
     function handleChange(prop, value) {
-        setDefaultGeneralInfo((prev) => {
-            return {
-                ...prev,
-                [prop]: value,
-            };
-        });
+        setDefaultGeneralInfo((prev) => ({
+            ...prev,
+            [prop]: value,
+        }));
     }
 
     return (
@@ -69,11 +67,7 @@ export default function GeneralInfoChanger({
                             handleChange("profession", e.target.value)
                         }
                     />
-                    <input
-                        name="user-photo"
-                        type="file"
-                        accept="image/*"
-                    ></input>
+                    <input name="user-photo" type="file" accept="image/*" />
 
                     <button type="submit">Submit</button>
                 </Accordion>
