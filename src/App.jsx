@@ -7,7 +7,7 @@ import {
     experienceExample,
     educationExample,
 } from "./assets/examples.js";
-import Contact from "./components/Contact.jsx";
+
 import ContactChanger from "./components/ContactChanger.jsx";
 import AboutChanger from "./components/AboutChanger.jsx";
 import About from "./components/About.jsx";
@@ -15,9 +15,10 @@ import Education from "./components/Education.jsx";
 import EducationChanger from "./components/EducationChanger.jsx";
 import WorkExperience from "./components/WorkExperience.jsx";
 import GeneralInfoChanger from "./components/GeneralInfoChanger.jsx";
-import UserImage from "./components/UserImage.jsx";
+import CvAside from "./components/CvAside.jsx";
 import Accordion from "./components/Accordion.jsx";
 import Header from "./components/Header.jsx";
+import UserIdentity from "./components/UserIdentity.jsx";
 import WorkExperienceChanger from "./components/WorkExperienceChanger.jsx";
 import "./App.css";
 
@@ -66,23 +67,11 @@ export default function App() {
                 />
             </aside>
             <main className={`${(!showEdit && "centered-main") || ""}`}>
-                <div>
-                    {generalInfo.fullName && (
-                        <h2 className="margin-bottom-0">
-                            {generalInfo.fullName}
-                        </h2>
-                    )}
-                    {generalInfo.profession && (
-                        <h3>{generalInfo.profession}</h3>
-                    )}
-                </div>
+                <UserIdentity generalInfo={generalInfo} />
                 <About>{aboutText}</About>
                 <Education>{education}</Education>
                 <WorkExperience>{experience}</WorkExperience>
-                <aside className="cv-aside">
-                    <UserImage src={generalInfo.photoSrc} />
-                    <Contact contacts={contacts} />
-                </aside>
+                <CvAside contacts={contacts} imageSrc={generalInfo.photoSrc} />
                 <button onClick={window.print}>Create File</button>
             </main>
         </>
