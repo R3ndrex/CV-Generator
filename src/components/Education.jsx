@@ -6,8 +6,8 @@ export default function Education({ children }) {
                 <section>
                     <h2>Education</h2>
                     <ul className="education">
-                        {children.map((element) => {
-                            return (
+                        {children.map(
+                            (element) =>
                                 element !== "" &&
                                 element !== undefined && (
                                     <li
@@ -27,8 +27,7 @@ export default function Education({ children }) {
                                         <div>{element.title}</div>
                                     </li>
                                 )
-                            );
-                        })}
+                        )}
                     </ul>
                 </section>
             )}
