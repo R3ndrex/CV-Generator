@@ -122,7 +122,7 @@ main {
         background-color: black;
         color: black;
     }
-    .centered-main {
+    main {
         border: none;
     }
 }
