@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import { UserContext } from "../../UserContext";
 import LightBuld from "../../assets/lightbulb-on.svg";
 
@@ -16,6 +16,7 @@ export default function SkillsChanger({ Accordion }) {
             });
         });
     }
+
     function findSkillValue(changingSkill) {
         return defaultSkills.find((skill) => skill.id === changingSkill.id)
             .text;
@@ -24,6 +25,21 @@ export default function SkillsChanger({ Accordion }) {
     function handleSubmit(e) {
         e.preventDefault();
         setSkills(defaultSkills);
+    }
+
+    function handleAdd() {
+        const newObject = { text: "", id: crypto.randomUUID() };
+        setSkills((prev) => [...prev, newObject]);
+        setDefaultSkills((prev) => [...prev, newObject]);
+    }
+
+    function handleRemove(removedSkill) {
+        setSkills((prev) =>
+            prev.filter((skill) => skill.id !== removedSkill.id)
+        );
+        setDefaultSkills((prev) =>
+            prev.filter((skill) => skill.id !== removedSkill.id)
+        );
     }
 
     return (
@@ -36,23 +52,28 @@ export default function SkillsChanger({ Accordion }) {
                     {skills.length > 0 && (
                         <ul>
                             {skills.map((skill) => (
-                                <input
-                                    key={skill.id}
-                                    type="text"
-                                    name={skill.id + "-name"}
-                                    id={skill.id + "-id"}
-                                    value={findSkillValue(skill)}
-                                    onChange={(e) =>
-                                        handleInputChange(
-                                            e.currentTarget.value,
-                                            skill
-                                        )
-                                    }
-                                />
+                                <Fragment key={skill.id}>
+                                    <input
+                                        type="text"
+                                        name={skill.id + "-name"}
+                                        id={skill.id + "-id"}
+                                        value={findSkillValue(skill)}
+                                        onChange={(e) =>
+                                            handleInputChange(
+                                                e.currentTarget.value,
+                                                skill
+                                            )
+                                        }
+                                    />
+                                    <button onClick={() => handleRemove(skill)}>
+                                        Remove
+                                    </button>
+                                </Fragment>
                             ))}
-                            <button type="submit">Submit</button>
                         </ul>
                     )}
+                    <button onClick={handleAdd}>Add</button>
+                    <button type="submit">Submit</button>
                 </form>
             </Accordion>
         </section>
