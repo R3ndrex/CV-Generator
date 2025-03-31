@@ -10,21 +10,18 @@ export default function Contact({ contacts }) {
                 <section>
                     <h2>Contact</h2>
                     <ul>
-                        {contacts.map((contact, index) => {
-                            return (
-                                <li key={inputs[index].id}>
-                                    {contact !== "" &&
-                                        contact !== undefined && (
-                                            <img
-                                                className="pictogram"
-                                                src={inputs[index].image}
-                                                alt={inputs[index].alt}
-                                            />
-                                        )}
-                                    {contact}
-                                </li>
-                            );
-                        })}
+                        {contacts.map((contact, index) => (
+                            <li key={inputs[index].id}>
+                                {contact !== "" && contact !== undefined && (
+                                    <img
+                                        className="pictogram"
+                                        src={inputs[index].image}
+                                        alt={inputs[index].alt}
+                                    />
+                                )}
+                                {contact}
+                            </li>
+                        ))}
                     </ul>
                 </section>
             )}
