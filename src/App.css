@@ -21,6 +21,7 @@ header {
 }
 .main-aside {
     width: 400px;
+    margin-bottom: 1rem;
     grid-row: 2/-1;
     > :last-child {
         margin-bottom: 2rem;
