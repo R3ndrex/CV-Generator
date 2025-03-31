@@ -2,7 +2,7 @@ import ContactChanger from "./ContactChanger.jsx";
 import AboutChanger from "./AboutChanger.jsx";
 import EducationChanger from "./EducationChanger.jsx";
 import GeneralInfoChanger from "./GeneralInfoChanger.jsx";
-import Accordion from "../Accordion.jsx";
+import Accordion from "./Accordion.jsx";
 import WorkExperienceChanger from "./WorkExperienceChanger.jsx";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext.js";
