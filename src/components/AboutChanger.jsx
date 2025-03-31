@@ -20,8 +20,8 @@ export default function AboutChanger({ aboutText, Accordion, setAboutText }) {
                         name="aboutText"
                         id="user-about-text"
                         maxLength={500}
-                        rows={3}
-                        cols={30}
+                        rows={5}
+                        cols={40}
                         value={defaultAboutText}
                         onChange={(e) => setDefaultAboutText(e.target.value)}
                     ></textarea>
