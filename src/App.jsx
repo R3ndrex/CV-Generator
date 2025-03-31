@@ -83,7 +83,7 @@ export default function App() {
                     <UserImage src={generalInfo.photoSrc} />
                     <Contact contacts={contacts} />
                 </aside>
-                <button onClick={() => window.print()}>Create File</button>
+                <button onClick={window.print}>Create File</button>
             </main>
         </>
     );
