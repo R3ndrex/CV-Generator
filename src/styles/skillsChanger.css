@@ -1,0 +1,8 @@
+.skill-input {
+    display: flex;
+    gap: 1rem;
+}
+.skill-changer-list {
+    display: flex;
+    flex-direction: column;
+}

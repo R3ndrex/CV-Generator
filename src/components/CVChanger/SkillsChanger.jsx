@@ -1,6 +1,7 @@
-import { Fragment, useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../UserContext";
 import LightBuld from "../../assets/lightbulb-on.svg";
+import "../../styles/skillsChanger.css";
 
 export default function SkillsChanger({ Accordion }) {
     const { skills, setSkills } = useContext(UserContext);
@@ -50,9 +51,9 @@ export default function SkillsChanger({ Accordion }) {
             >
                 <form onSubmit={handleSubmit}>
                     {skills.length > 0 && (
-                        <ul>
+                        <ul className="skill-changer-list">
                             {skills.map((skill) => (
-                                <Fragment key={skill.id}>
+                                <div key={skill.id} className="skill-input">
                                     <input
                                         type="text"
                                         name={skill.id + "-name"}
@@ -68,7 +69,7 @@ export default function SkillsChanger({ Accordion }) {
                                     <button onClick={() => handleRemove(skill)}>
                                         Remove
                                     </button>
-                                </Fragment>
+                                </div>
                             ))}
                         </ul>
                     )}
