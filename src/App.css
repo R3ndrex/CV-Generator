@@ -69,10 +69,10 @@ main {
     grid-column: 2/-1;
     grid-row: 1/4;
     padding: 1rem;
-    color: white;
+    color: black;
     border-color: white;
-    background-color: var(--changing-color);
-    border: 1px solid var(--changing-color);
+    background-color: white;
+    border: 1px solid black;
 }
 .user-photo {
     width: 150px;
@@ -122,6 +122,7 @@ main {
     .cv-aside {
         background-color: black;
         color: black;
+        border-color: black;
     }
     main {
         border: none;
