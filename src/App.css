@@ -60,7 +60,9 @@ main {
 .pictogram {
     width: 1em;
 }
-
+.cv-aside-ul {
+    gap: 0.5rem;
+}
 .cv-aside {
     display: flex;
     flex-direction: column;

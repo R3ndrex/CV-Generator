@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { inputs } from "../../assets/inputs";
 
 export default function Contact({ contacts }) {
@@ -9,18 +10,23 @@ export default function Contact({ contacts }) {
             {!CheckEmpty(contacts) && (
                 <section>
                     <h2>Contact</h2>
-                    <ul>
+                    <ul className="cv-aside-ul">
                         {contacts.map((contact, index) => (
-                            <li key={inputs[index].id}>
-                                {contact !== "" && contact !== undefined && (
-                                    <img
-                                        className="pictogram"
-                                        src={inputs[index].image}
-                                        alt={inputs[index].alt}
-                                    />
+                            <Fragment key={inputs[index].id}>
+                                {contact !== "" && (
+                                    <li>
+                                        {contact !== "" &&
+                                            contact !== undefined && (
+                                                <img
+                                                    className="pictogram"
+                                                    src={inputs[index].image}
+                                                    alt={inputs[index].alt}
+                                                />
+                                            )}
+                                        {contact}
+                                    </li>
                                 )}
-                                {contact}
-                            </li>
+                            </Fragment>
                         ))}
                     </ul>
                 </section>
