@@ -23,7 +23,7 @@ export default function AboutChanger({ Accordion }) {
                         name="aboutText"
                         id="user-about-text"
                         maxLength={500}
-                        rows={5}
+                        rows={10}
                         cols={40}
                         value={defaultAboutText}
                         onChange={(e) => setDefaultAboutText(e.target.value)}
