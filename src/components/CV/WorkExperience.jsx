@@ -12,7 +12,8 @@ export default function WorkExperience({ children }) {
                                 <div className="date-container">
                                     {work.dateStart && work.dateEnd && (
                                         <>
-                                            {work.dateStart} - {work.dateEnd}
+                                            {work.dateStart} <br />{" "}
+                                            {work.dateEnd}
                                         </>
                                     )}
                                 </div>
