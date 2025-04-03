@@ -105,7 +105,7 @@ export default function EducationChanger({ Accordion }) {
                                 </label>
                                 <input
                                     placeholder="Enter starting date"
-                                    type="date"
+                                    type="month"
                                     name={`date-start-${edu.id}`}
                                     id={`date-start-${edu.id}`}
                                     value={findEduAndReturnValue(
@@ -126,7 +126,7 @@ export default function EducationChanger({ Accordion }) {
 
                                 <input
                                     placeholder="Enter ending date"
-                                    type="date"
+                                    type="month"
                                     name={`date-end-${edu.id}`}
                                     id={`date-end-${edu.id}`}
                                     value={findEduAndReturnValue(

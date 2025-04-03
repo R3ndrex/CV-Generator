@@ -17,15 +17,15 @@ export const experienceExample = {
     respons:
         "Developed and maintained user-facing features using React and JavaScript.",
     id: crypto.randomUUID(),
-    dateStart: "2022-06-01",
-    dateEnd: "2023-12-31",
+    dateStart: "2022-06",
+    dateEnd: "2023-12",
 };
 export const educationExample = {
     schoolName: "University of Oxford",
     title: "Software Engineer",
     id: crypto.randomUUID(),
-    dateStart: "2020-09-01",
-    dateEnd: "2024-06-30",
+    dateStart: "2020-09",
+    dateEnd: "2024-05",
 };
 export const skillsExample = [
     {

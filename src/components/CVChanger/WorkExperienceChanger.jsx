@@ -68,13 +68,13 @@ export default function WorkExperienceChanger({ Accordion }) {
                                     maxLength={500}
                                 ></textarea>
                                 <input
-                                    type="date"
+                                    type="month"
                                     name={`dateStart-${work.id}`}
                                     id={`dateStart-${work.id}`}
                                     placeholder="Enter start date"
                                 />
                                 <input
-                                    type="date"
+                                    type="month"
                                     name={`dateEnd-${work.id}`}
                                     id={`dateEnd-${work.id}`}
                                     placeholder="Enter end date"
