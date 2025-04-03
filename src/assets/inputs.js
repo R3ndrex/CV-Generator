@@ -8,7 +8,8 @@ export const inputs = [
         image: Phone,
         alt: "Phone image",
         placeholder: "Enter phone number",
-        pattern: "^(\\s*|[0-9]{9,})$",
+        pattern:
+            /^$|^(\+?[0-9]{1,4}[-\s]?)?(\([0-9]{1,4}\)[-\s]?)?[0-9]{1,9}[-\s]?[0-9]{1,9}[-\s]?[0-9]{0,9}$/,
         id: 0,
     },
     {
