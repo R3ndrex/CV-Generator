@@ -2,7 +2,7 @@ import Phone from "../assets/phone.svg";
 import Email from "../assets/email.svg";
 import Home from "../assets/home.svg";
 import LinkedIn from "../assets/linkedin.svg";
-
+import GitHub from "../assets/github.svg";
 export const inputs = [
     {
         image: Phone,
@@ -30,5 +30,11 @@ export const inputs = [
         alt: "LinkedIn image",
         placeholder: "Enter LinkedIn adress",
         id: 3,
+    },
+    {
+        image: GitHub,
+        alt: "Github image",
+        placeholder: "Enter GitHub adress",
+        id: 4,
     },
 ];
