@@ -5,7 +5,7 @@
 .educationLi {
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 1fr;
     > :first-child {
         font-style: normal;
         font-weight: 1000;
