@@ -41,3 +41,17 @@ export const skillsExample = [
         id: crypto.randomUUID(),
     },
 ];
+export const projectsExample = [
+    {
+        title: "Youtube Clone",
+        about: "Technologies: React, Redux, Firebase (or Node.js + Express), YouTube API, Tailwind CSS \n Description: A simplified YouTube clone that allows users to browse, search, and watch videos. The project demonstrates API integration, state management, and UI/UX skills.",
+        link: "htpps://yotube-clone-example.com",
+        id: crypto.randomUUID(),
+    },
+    {
+        title: "Spotify Clone",
+        about: "Technologies: React, Redux, Spotify API, Tailwind CSS \n Description: A Spotify-inspired music streaming app that allows users to browse, search, and play songs. The project demonstrates API integration, state management, and UI/UX design.",
+        link: "htpps://spotify-clone-example.com",
+        id: crypto.randomUUID(),
+    },
+];
