@@ -8,16 +8,14 @@ export default function WorkExperienceChanger({ Accordion }) {
     function handleSubmit(e) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const newExperience = experience.map((work) => {
-            return {
-                ...work,
-                companyName: formData.get(`company-${work.id}`),
-                title: formData.get(`title-${work.id}`),
-                respons: formData.get(`respons-${work.id}`),
-                dateStart: formData.get(`dateStart-${work.id}`),
-                dateEnd: formData.get(`dateEnd-${work.id}`),
-            };
-        });
+        const newExperience = experience.map((work) => ({
+            ...work,
+            companyName: formData.get(`company-${work.id}`),
+            title: formData.get(`title-${work.id}`),
+            respons: formData.get(`respons-${work.id}`),
+            dateStart: formData.get(`dateStart-${work.id}`),
+            dateEnd: formData.get(`dateEnd-${work.id}`),
+        }));
         setExperience(newExperience);
     }
     function removeExperience(id) {
