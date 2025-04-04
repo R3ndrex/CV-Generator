@@ -5,16 +5,19 @@
 .educationLi {
     padding: 0;
     display: grid;
+    gap: 0;
     grid-template-columns: 3fr 1fr;
     > :first-child {
         font-style: normal;
         font-weight: 1000;
+        grid-row: 1;
     }
     > :nth-child(2) {
-        justify-self: end;
-    }
-    > :last-child {
         font-style: normal;
         color: var(--changing-color);
+    }
+    > :last-child {
+        justify-self: end;
+        grid-row: 1/-1;
     }
 }

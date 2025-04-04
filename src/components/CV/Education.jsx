@@ -15,6 +15,7 @@ export default function Education({ children }) {
                                         key={element.id}
                                     >
                                         <div>{element.schoolName}</div>
+                                        <div>{element.title}</div>
                                         {element.dateStart &&
                                         element.dateEnd ? (
                                             <div>
@@ -24,7 +25,6 @@ export default function Education({ children }) {
                                         ) : (
                                             <div></div>
                                         )}
-                                        <div>{element.title}</div>
                                     </li>
                                 )
                         )}
