@@ -4,6 +4,7 @@ import WorkExperience from "./WorkExperience.jsx";
 import CvAside from "./CvAside.jsx";
 import Skills from "./Skills.jsx";
 import UserIdentity from "./UserIdentity.jsx";
+import Projects from "./Projects.jsx";
 import { useContext } from "react";
 import { UserContext } from "../../UserContext.js";
 
@@ -16,6 +17,7 @@ export default function CV() {
         experience,
         contacts,
         skills,
+        projects,
     } = useContext(UserContext);
     return (
         <main className={`${(!showEdit && "centered-main") || ""}`}>
@@ -25,6 +27,7 @@ export default function CV() {
             <Education>{education}</Education>
             <WorkExperience>{experience}</WorkExperience>
             <CvAside contacts={contacts} imageSrc={generalInfo.photoSrc} />
+            <Projects>{projects}</Projects>
             <button onClick={window.print}>Create File</button>
         </main>
     );
