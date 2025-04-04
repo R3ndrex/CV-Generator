@@ -5,6 +5,7 @@ import {
     experienceExample,
     educationExample,
     skillsExample,
+    projectsExample,
 } from "./assets/examples.js";
 
 import { useState } from "react";
@@ -18,6 +19,7 @@ export default function UserDataProvider({ children }) {
     const [aboutText, setAboutText] = useState(aboutExample);
     const [experience, setExperience] = useState([{ ...experienceExample }]);
     const [skills, setSkills] = useState([...skillsExample]);
+    const [projects, setProjects] = useState([...projectsExample]);
 
     return (
         <UserContext
@@ -36,6 +38,8 @@ export default function UserDataProvider({ children }) {
                 setExperience,
                 skills,
                 setSkills,
+                projects,
+                setProjects,
             }}
         >
             {children}
