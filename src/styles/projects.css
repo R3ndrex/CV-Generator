@@ -1,0 +1,12 @@
+.projects-ul {
+    gap: 1rem;
+}
+.projects-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
+    :last-child {
+        color: var(--changing-color);
+    }
+}
