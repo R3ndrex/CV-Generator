@@ -20,7 +20,7 @@ header {
     text-align: center;
 }
 .main-aside {
-    width: 400px;
+    max-width: 400px;
     margin-bottom: 1rem;
     grid-row: 2/-1;
     > :last-child {
@@ -36,7 +36,7 @@ main {
     margin-bottom: 0;
 }
 main {
-    width: 700px;
+    max-width: max-content;
     min-height: 300px;
     margin-bottom: 1rem;
     display: grid;
@@ -67,6 +67,7 @@ main {
 .cv-aside {
     display: flex;
     flex-direction: column;
+    max-width: max-content;
     position: relative;
     top: -2rem;
     right: -2rem;
@@ -111,6 +112,12 @@ main {
         width: min(90%, 500px);
     }
 }
+@media screen and (width <= 450px) {
+    main {
+        grid-template-columns: 2fr 2fr;
+    }
+}
+
 @media (width<=800px) {
     :root {
         font-size: 0.8rem;
