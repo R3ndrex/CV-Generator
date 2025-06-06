@@ -2,7 +2,9 @@
     display: grid;
     align-items: start;
     gap: 1rem 10%;
+    width: 100%;
     grid-template-columns: 3fr 5fr 3fr;
+    justify-items: center;
     grid-template-rows: min-content min-content;
 }
 *,
@@ -110,11 +112,11 @@ main {
         grid-template-columns: minmax(100px, 1fr);
     }
     main {
-        width: min(90%, 700px);
+        margin: 0.5rem;
     }
 
     .main-aside {
-        width: min(90%, 500px);
+        margin: 0.5rem;
     }
 }
 @media screen and (width <= 450px) {
