@@ -1,4 +1,6 @@
-export default function UserIdentity({ generalInfo }) {
+import { useAppSelector } from "../../app/hooks";
+export default function UserIdentity() {
+    const generalInfo = useAppSelector((state) => state.generalInfo);
     return (
         <>
             {(generalInfo.fullName !== "" || generalInfo.profession !== "") && (

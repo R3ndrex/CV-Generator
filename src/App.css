@@ -1,9 +1,9 @@
 #root {
     display: grid;
     align-items: start;
-    gap: 1rem 10%;
+    gap: 1rem 7%;
     width: 100%;
-    grid-template-columns: 3fr 5fr 3fr;
+    grid-template-columns: 4fr 5fr;
     justify-items: center;
     grid-template-rows: min-content min-content;
 }
@@ -27,7 +27,7 @@ header {
     text-align: center;
 }
 .main-aside {
-    max-width: 400px;
+    width: 400px;
     margin-bottom: 1rem;
     grid-row: 2/-1;
     > :last-child {
@@ -42,6 +42,11 @@ main {
 .margin-bottom-0 {
     margin-bottom: 0;
 }
+
+.main-aside.enabled + main {
+    justify-self: start;
+}
+
 main {
     max-width: 734px;
     min-height: 300px;
@@ -63,6 +68,10 @@ main {
 }
 .centered-main {
     grid-column: 1/-1;
+    gap: 0;
+}
+.centered-main section:first-child {
+    margin-bottom: 1rem;
 }
 .pictogram {
     width: 1em;
@@ -93,6 +102,11 @@ main {
     object-fit: cover;
     align-self: center;
 }
+
+h2 {
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
 /* make only first 2 elements in main 1/2 so contact will not be displayd poorly */
 main {
     * {
@@ -110,6 +124,9 @@ main {
         justify-items: center;
         gap: 2rem;
         grid-template-columns: minmax(100px, 1fr);
+    }
+    .main-aside.enabled + main {
+        justify-self: center;
     }
     main {
         margin: 0.5rem;

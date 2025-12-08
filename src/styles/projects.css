@@ -9,4 +9,7 @@
     :last-child {
         color: var(--changing-color);
     }
+    & p {
+        margin: 0.5rem 0;
+    }
 }

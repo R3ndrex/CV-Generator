@@ -1,41 +1,36 @@
-import { useContext, useState } from "react";
-import { UserContext } from "../../UserContext";
+import { FormEvent } from "react";
 import iInCircle from "../../assets/alpha-i-circle-outline.svg";
-
+import { useAppSelector, useAppDispatch } from "../../app/hooks";
+import {
+    changeImage,
+    changeName,
+    changeProfession,
+} from "../../features/generalInfo";
 export default function GeneralInfoChanger({ Accordion }) {
-    const { generalInfo, setGeneralInfo } = useContext(UserContext);
+    const generalInfo = useAppSelector((state) => state.generalInfo);
+    const dispatch = useAppDispatch();
 
-    const [defaultGeneralInfo, setDefaultGeneralInfo] = useState(generalInfo);
-
-    function HandleImage(image) {
+    function HandleImage(image: File) {
         if (image && image.name !== "") {
             const reader = new FileReader();
 
-            reader.onload = (e) =>
-                setGeneralInfo((prev) => ({
-                    ...prev,
-                    photoSrc: e.target.result,
-                }));
-
+            reader.onload = () => {
+                dispatch(changeImage(reader.result as string));
+            };
             reader.readAsDataURL(image);
         }
     }
-    function handleSubmit(e) {
+    function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        HandleImage(formData.get("user-photo"));
-        setGeneralInfo((prev) => ({
-            ...prev,
-            fullName: formData.get("username"),
-            profession: formData.get("profession"),
-        }));
-    }
 
-    function handleChange(prop, value) {
-        setDefaultGeneralInfo((prev) => ({
-            ...prev,
-            [prop]: value,
-        }));
+        const image = formData.get("user-photo");
+        if (image instanceof File) {
+            HandleImage(image);
+        }
+
+        dispatch(changeName(String(formData.get("username"))));
+        dispatch(changeProfession(String(formData.get("profession"))));
     }
 
     return (
@@ -51,10 +46,7 @@ export default function GeneralInfoChanger({ Accordion }) {
                         id="user-name"
                         placeholder="Enter full name"
                         maxLength={100}
-                        value={defaultGeneralInfo.fullName}
-                        onChange={(e) =>
-                            handleChange("fullName", e.target.value)
-                        }
+                        defaultValue={generalInfo.fullName}
                     />
                     <input
                         type="text"
@@ -62,10 +54,7 @@ export default function GeneralInfoChanger({ Accordion }) {
                         id="user-profession"
                         placeholder="Enter profession"
                         maxLength={50}
-                        value={defaultGeneralInfo.profession}
-                        onChange={(e) =>
-                            handleChange("profession", e.target.value)
-                        }
+                        defaultValue={generalInfo.profession}
                     />
                     <input name="user-photo" type="file" accept="image/*" />
 

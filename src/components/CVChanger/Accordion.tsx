@@ -1,8 +1,17 @@
 import Chevron from "../../assets/chevron-down.svg";
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import "../../styles/Accordion.css";
 
-export default function Accordion({ image, title, children }) {
+interface AccordionProps {
+    image: {
+        src: string;
+        alt: string;
+    };
+    title: string;
+    children: ReactNode;
+}
+
+export default function Accordion({ image, title, children }: AccordionProps) {
     const [active, setActive] = useState(false);
     return (
         <>

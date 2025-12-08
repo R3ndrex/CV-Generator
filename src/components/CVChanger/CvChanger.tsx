@@ -1,16 +1,13 @@
-import ContactChanger from "./ContactChanger.jsx";
-import AboutChanger from "./AboutChanger.jsx";
+import ContactChanger from "./ContactChanger";
+import AboutChanger from "./AboutChanger";
 import EducationChanger from "./EducationChanger.jsx";
 import GeneralInfoChanger from "./GeneralInfoChanger.jsx";
-import Accordion from "./Accordion.jsx";
-import WorkExperienceChanger from "./WorkExperienceChanger.jsx";
-import SkillsChanger from "./SkillsChanger.jsx";
-import ProjectsChanger from "./ProjectsChanger.jsx";
-import { useContext } from "react";
-import { UserContext } from "../../UserContext.js";
+import Accordion from "./Accordion";
+import WorkExperienceChanger from "./WorkExperienceChanger.tsx";
+import SkillsChanger from "./SkillsChanger.tsx";
+import ProjectsChanger from "./ProjectsChanger.tsx";
 
-export default function CvChanger() {
-    const { showEdit } = useContext(UserContext);
+export default function CvChanger({ showEdit }: { showEdit: boolean }) {
     return (
         <aside
             className={`main-aside ${(!showEdit && "disabled") || "enabled"}`}

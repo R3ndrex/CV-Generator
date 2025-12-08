@@ -1,15 +1,14 @@
-import { useContext, useState } from "react";
 import Account from "../../assets/account.svg";
-import { UserContext } from "../../UserContext";
-
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { changeText } from "../../features/aboutSlice";
+import { FormEvent } from "react";
 export default function AboutChanger({ Accordion }) {
-    const { aboutText, setAboutText } = useContext(UserContext);
-    const [defaultAboutText, setDefaultAboutText] = useState(aboutText);
-    function handleSubmit(e) {
+    const aboutText = useAppSelector((state) => state.about.text);
+    const dispatch = useAppDispatch();
+    function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        setAboutText(form.get("aboutText"));
-        setDefaultAboutText(form.get("aboutText"));
+        dispatch(changeText(String(form.get("aboutText"))));
     }
     return (
         <section>
@@ -25,8 +24,7 @@ export default function AboutChanger({ Accordion }) {
                         maxLength={500}
                         rows={10}
                         cols={40}
-                        value={defaultAboutText}
-                        onChange={(e) => setDefaultAboutText(e.target.value)}
+                        defaultValue={aboutText}
                     ></textarea>
                     <button type="submit">Submit</button>
                 </Accordion>

@@ -1,12 +1,15 @@
 import "../../styles/projects.css";
-export default function Projects({ children }) {
+import { useAppSelector } from "../../app/hooks";
+
+export default function Projects() {
+    const projects = useAppSelector((state) => state.projects);
     return (
         <>
-            {children.length > 0 && (
+            {projects.length > 0 && (
                 <section>
                     <h2>Projects</h2>
                     <ul className="projects-ul">
-                        {children.map((project) => {
+                        {projects.map((project) => {
                             return (
                                 <li className="projects-item" key={project.id}>
                                     <h3>{project.title}</h3>

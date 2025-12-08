@@ -1,6 +1,7 @@
 .education {
     padding-left: 1rem;
     gap: 1rem;
+    margin-top: 0;
 }
 .educationLi {
     padding: 0;
@@ -20,4 +21,7 @@
         justify-self: end;
         grid-row: 1/-1;
     }
+}
+.edu-title {
+    margin-bottom: 0;
 }
