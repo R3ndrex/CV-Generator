@@ -1,3 +1,3 @@
-export function ChangeDateStyle(date: string) {
+export default function ChangeDateStyle(date: string) {
     return date.replaceAll("-", ".");
 }
