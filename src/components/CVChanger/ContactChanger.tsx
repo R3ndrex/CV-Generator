@@ -1,27 +1,34 @@
 import Message from "../../assets/message.svg";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { changeByArray } from "../../features/contactSlice";
-import { FieldKey } from "../../features/contactSlice";
+import { changeByObject } from "../../features/contactSlice.ts";
+import type { FieldKey, stateType } from "../../features/contactSlice.ts";
 import { FormEvent } from "react";
+import Accordion from "./Accordion.tsx";
 
-export default function ContactChanger({ Accordion }) {
+export default function ContactChanger() {
     const contacts = useAppSelector((state) => state.contact);
     const contactKeys = Object.keys(contacts);
     const dispatch = useAppDispatch();
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        let inputContacts = (contactKeys as FieldKey[]).map((contact) =>
-            String(form.get(contacts[contact].id))
+        const raw = Object.fromEntries(form.entries());
+        const data: stateType<string> = {
+            phone: String(raw.phone) ?? "",
+            email: String(raw.email) ?? "",
+            linkedin: String(raw.linkedin) ?? "",
+            address: String(raw.address) ?? "",
+            github: String(raw.github) ?? "",
+        };
+        const uniqueContacts = Object.values(data).filter(
+            (contact) => contact !== "",
         );
-        const uniqueContacts = inputContacts.filter(
-            (contact) => contact !== ""
-        );
+        console.log(uniqueContacts);
         const changedSet = new Set(uniqueContacts);
         if (changedSet.size !== uniqueContacts.length) {
             return alert("You cant have same input values");
         }
-        dispatch(changeByArray(inputContacts));
+        dispatch(changeByObject(data));
     }
 
     return (
@@ -32,7 +39,7 @@ export default function ContactChanger({ Accordion }) {
                     title="Contact"
                 >
                     <ul>
-                        {(contactKeys as FieldKey[]).map((contact) => (
+                        {(contactKeys as FieldKey[]).map((contact, i) => (
                             <li key={contacts[contact].id}>
                                 <img
                                     src={contacts[contact].image}
@@ -40,7 +47,7 @@ export default function ContactChanger({ Accordion }) {
                                     className="pictogram"
                                 />
                                 <input
-                                    name={contacts[contact].id}
+                                    name={contactKeys[i]}
                                     id={contacts[contact].id}
                                     defaultValue={contacts[contact].text}
                                     placeholder={contacts[contact].placeholder}
