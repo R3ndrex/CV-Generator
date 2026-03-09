@@ -6,9 +6,10 @@ import {
     changeAllEducation,
     addEducation,
 } from "../../features/educationSlice.ts";
+import Accordion from "./Accordion.tsx";
 import { FormEvent } from "react";
 
-export default function EducationChanger({ Accordion }) {
+export default function EducationChanger() {
     const dispatch = useAppDispatch();
     const education = useAppSelector((state) => state.education);
 

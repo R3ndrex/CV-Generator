@@ -7,7 +7,8 @@ import {
     removeWorkExperience,
 } from "../../features/workExperienceSlice.ts";
 import { FormEvent } from "react";
-export default function WorkExperienceChanger({ Accordion }) {
+import Accordion from "./Accordion.tsx";
+export default function WorkExperienceChanger() {
     const workExperience = useAppSelector((state) => state.workExperience);
     const dispatch = useAppDispatch();
 

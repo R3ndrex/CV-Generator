@@ -2,7 +2,9 @@ import Account from "../../assets/account.svg";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { changeText } from "../../features/aboutSlice.ts";
 import { FormEvent } from "react";
-export default function AboutChanger({ Accordion }) {
+import Accordion from "./Accordion.tsx";
+
+export default function AboutChanger() {
     const aboutText = useAppSelector((state) => state.about.text);
     const dispatch = useAppDispatch();
     function handleSubmit(e: FormEvent<HTMLFormElement>) {

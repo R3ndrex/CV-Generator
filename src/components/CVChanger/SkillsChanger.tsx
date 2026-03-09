@@ -7,8 +7,8 @@ import {
 } from "../../features/skillsSlice.ts";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { FormEvent } from "react";
-
-export default function SkillsChanger({ Accordion }) {
+import Accordion from "./Accordion.tsx";
+export default function SkillsChanger() {
     const skills = useAppSelector((state) => state.skills);
     const dispatch = useAppDispatch();
 

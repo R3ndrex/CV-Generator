@@ -6,7 +6,8 @@ import {
     changeName,
     changeProfession,
 } from "../../features/generalInfo.ts";
-export default function GeneralInfoChanger({ Accordion }) {
+import Accordion from "./Accordion.tsx";
+export default function GeneralInfoChanger() {
     const generalInfo = useAppSelector((state) => state.generalInfo);
     const dispatch = useAppDispatch();
 

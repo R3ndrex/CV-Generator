@@ -7,10 +7,10 @@ import {
 } from "../../features/projectsSlice";
 import "../../styles/projectsChanger.css";
 import { FormEvent } from "react";
-
+import Accordion from "./Accordion.tsx";
 import type { ProjectType } from "../../features/projectsSlice.ts";
 
-export default function ProjectsChanger({ Accordion }) {
+export default function ProjectsChanger() {
     const projects = useAppSelector((state) => state.projects);
     const dispatch = useAppDispatch();
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
