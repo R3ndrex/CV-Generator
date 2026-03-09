@@ -40,6 +40,7 @@ export default function SkillsChanger({ Accordion }) {
                                         defaultValue={skill.text}
                                     />
                                     <button
+                                        type="button"
                                         onClick={() =>
                                             dispatch(removeSkill(skill.id))
                                         }
@@ -50,7 +51,9 @@ export default function SkillsChanger({ Accordion }) {
                             ))}
                         </ul>
                     )}
-                    <button onClick={() => dispatch(addSkill())}>Add</button>
+                    <button type="button" onClick={() => dispatch(addSkill())}>
+                        Add
+                    </button>
                     <button type="submit">Submit</button>
                 </form>
             </Accordion>
