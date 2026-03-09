@@ -1,7 +1,6 @@
 import "../../styles/education.css";
 import { useAppSelector } from "../../app/hooks";
-
-import { ChangeDateStyle } from "../../assets/utils";
+import ChangeDateStyle from "../../assets/utils.ts";
 
 export default function Education() {
     const education = useAppSelector((state) => state.education);
@@ -27,7 +26,7 @@ export default function Education() {
                                             <div></div>
                                         )}
                                     </li>
-                                )
+                                ),
                         )}
                     </ul>
                 </section>

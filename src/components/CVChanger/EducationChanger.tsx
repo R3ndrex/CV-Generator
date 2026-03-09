@@ -5,7 +5,7 @@ import {
     removeEducationByID,
     changeAllEducation,
     addEducation,
-} from "../../features/educationSlice";
+} from "../../features/educationSlice.ts";
 import { FormEvent } from "react";
 
 export default function EducationChanger({ Accordion }) {

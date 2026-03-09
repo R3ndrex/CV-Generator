@@ -1,6 +1,6 @@
 import Account from "../../assets/account.svg";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { changeText } from "../../features/aboutSlice";
+import { changeText } from "../../features/aboutSlice.ts";
 import { FormEvent } from "react";
 export default function AboutChanger({ Accordion }) {
     const aboutText = useAppSelector((state) => state.about.text);

@@ -5,7 +5,7 @@ import {
     changeImage,
     changeName,
     changeProfession,
-} from "../../features/generalInfo";
+} from "../../features/generalInfo.ts";
 export default function GeneralInfoChanger({ Accordion }) {
     const generalInfo = useAppSelector((state) => state.generalInfo);
     const dispatch = useAppDispatch();

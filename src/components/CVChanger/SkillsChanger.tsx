@@ -4,7 +4,7 @@ import {
     addSkill,
     removeSkill,
     changeAllSkills,
-} from "../../features/skillsSlice";
+} from "../../features/skillsSlice.ts";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { FormEvent } from "react";
 

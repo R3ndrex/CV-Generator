@@ -5,7 +5,7 @@ import {
     addWorkExperience,
     changeAllWorkExperience,
     removeWorkExperience,
-} from "../../features/workExperienceSlice";
+} from "../../features/workExperienceSlice.ts";
 import { FormEvent } from "react";
 export default function WorkExperienceChanger({ Accordion }) {
     const workExperience = useAppSelector((state) => state.workExperience);
@@ -76,7 +76,7 @@ export default function WorkExperienceChanger({ Accordion }) {
                                     type="button"
                                     onClick={() =>
                                         dispatch(
-                                            removeWorkExperience(experience.id)
+                                            removeWorkExperience(experience.id),
                                         )
                                     }
                                 >

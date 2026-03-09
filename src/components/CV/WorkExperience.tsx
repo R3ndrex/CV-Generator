@@ -1,6 +1,6 @@
 import "../../styles/workExperience.css";
 import { useAppSelector } from "../../app/hooks";
-import { ChangeDateStyle } from "../../assets/utils";
+import ChangeDateStyle from "../../assets/utils.ts";
 export default function WorkExperience() {
     const workExperience = useAppSelector((state) => state.workExperience);
     return (
@@ -17,11 +17,11 @@ export default function WorkExperience() {
                                         experience.dateEnd && (
                                             <>
                                                 {ChangeDateStyle(
-                                                    experience.dateStart
+                                                    experience.dateStart,
                                                 )}{" "}
                                                 <br />
                                                 {ChangeDateStyle(
-                                                    experience.dateEnd
+                                                    experience.dateEnd,
                                                 )}
                                             </>
                                         )}

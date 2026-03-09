@@ -8,7 +8,7 @@ import {
 import "../../styles/projectsChanger.css";
 import { FormEvent } from "react";
 
-import type { ProjectType } from "../../features/projectsSlice";
+import type { ProjectType } from "../../features/projectsSlice.ts";
 
 export default function ProjectsChanger({ Accordion }) {
     const projects = useAppSelector((state) => state.projects);
@@ -34,7 +34,7 @@ export default function ProjectsChanger({ Accordion }) {
                 >
                     <ul>
                         {(projects as ProjectType[]).map((project) => (
-                            <ProjectItem project={project} />
+                            <ProjectItem key={project.id} project={project} />
                         ))}
                     </ul>
                     <div>
@@ -52,10 +52,10 @@ export default function ProjectsChanger({ Accordion }) {
     );
 }
 
-function ProjectItem({ project }: { project: ProjectType }) {
+function ProjectItem({ project, key }: { project: ProjectType; key: string }) {
     const dispatch = useAppDispatch();
     return (
-        <li className="project-changer-item">
+        <li key={key} className="project-changer-item">
             <input
                 type="text"
                 name={`${project.id}-title`}

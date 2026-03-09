@@ -1,11 +1,11 @@
 import ContactChanger from "./ContactChanger";
 import AboutChanger from "./AboutChanger";
-import EducationChanger from "./EducationChanger.jsx";
-import GeneralInfoChanger from "./GeneralInfoChanger.jsx";
+import EducationChanger from "./EducationChanger";
+import GeneralInfoChanger from "./GeneralInfoChanger";
 import Accordion from "./Accordion";
-import WorkExperienceChanger from "./WorkExperienceChanger.tsx";
-import SkillsChanger from "./SkillsChanger.tsx";
-import ProjectsChanger from "./ProjectsChanger.tsx";
+import WorkExperienceChanger from "./WorkExperienceChanger";
+import SkillsChanger from "./SkillsChanger";
+import ProjectsChanger from "./ProjectsChanger";
 
 export default function CvChanger({ showEdit }: { showEdit: boolean }) {
     return (
