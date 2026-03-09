@@ -16,7 +16,7 @@ export default function CV({ showEdit }: { showEdit: boolean }) {
             <WorkExperience />
             <CvAside />
             <Projects />
-            <button onClick={window.print}>Create File</button>
+            <button onClick={() => window.print()}>Create File</button>
         </main>
     );
 }
