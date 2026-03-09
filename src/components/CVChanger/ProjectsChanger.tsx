@@ -59,20 +59,20 @@ function ProjectItem({ project, key }: { project: ProjectType; key: string }) {
             <input
                 type="text"
                 name={`${project.id}-title`}
-                id="title"
+                id={`${project.id}-title`}
                 placeholder="Write project title"
                 defaultValue={project.title}
             />
             <input
                 type="text"
                 name={`${project.id}-link`}
-                id="link"
+                id={`${project.id}-link`}
                 placeholder="Enter project link"
                 defaultValue={project.link}
             />
             <textarea
                 name={`${project.id}-about`}
-                id="about"
+                id={`${project.id}-about`}
                 placeholder="Write project description"
                 defaultValue={project.about}
                 cols={40}
