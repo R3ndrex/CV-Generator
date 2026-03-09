@@ -14,15 +14,15 @@ interface contactType {
     type: "email" | "text";
     id: string;
 }
-interface stateType {
-    phone: contactType;
-    email: contactType;
-    address: contactType;
-    linkedin: contactType;
-    github: contactType;
+export interface stateType<Type> {
+    phone: Type;
+    email: Type;
+    address: Type;
+    linkedin: Type;
+    github: Type;
 }
 
-const initialState: stateType = {
+const initialState: stateType<contactType> = {
     phone: {
         text: "1234567891",
         image: Phone,
@@ -65,20 +65,21 @@ const initialState: stateType = {
         id: "4",
     },
 };
+
 export type FieldKey = keyof typeof initialState;
 
 const contactSlice = createSlice({
     name: "contact",
     initialState,
     reducers: {
-        changeByArray: (state, action: PayloadAction<string[]>) => {
-            state.github.text = action.payload[4];
-            state.linkedin.text = action.payload[3];
-            state.address.text = action.payload[2];
-            state.email.text = action.payload[1];
-            state.phone.text = action.payload[0];
+        changeByObject: (state, action: PayloadAction<stateType<string>>) => {
+            state.github.text = action.payload.github;
+            state.linkedin.text = action.payload.linkedin;
+            state.address.text = action.payload.address;
+            state.email.text = action.payload.email;
+            state.phone.text = action.payload.phone;
         },
     },
 });
 export default contactSlice.reducer;
-export const { changeByArray } = contactSlice.actions;
+export const { changeByObject } = contactSlice.actions;
