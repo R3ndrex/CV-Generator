@@ -23,7 +23,7 @@ h6 {
 header {
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     gap: 1rem;
     margin: 1rem;
     > h1 {
